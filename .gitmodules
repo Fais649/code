@@ -1,0 +1,6 @@
+[submodule "c"]
+	path = c
+	url = git@github.com:Fais649/c.git
+[submodule "rust"]
+	path = rust
+	url = git@github.com:Fais649/rust.git
