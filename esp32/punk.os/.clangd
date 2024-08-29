@@ -1,0 +1,7 @@
+If:
+  PathMatch: .platformio/.*
+Diagnostics:
+  Suppress: '*'
+CompileFlags:
+  Add: [-ferror-limit=0, -I./lib/ -L./lib/]
+  Remove: [-fno-tree-switch-conversion , -fstrict-volatile-bitfields, -mlongcalls] 
