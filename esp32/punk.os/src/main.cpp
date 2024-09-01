@@ -1,3 +1,4 @@
+#include "HWCDC.h"
 #include "ed047tc1.h"
 #ifndef BOARD_HAS_PSRAM
 #error "Please enable PSRAM !!!"
@@ -5,9 +6,9 @@
 
 #include "epd_driver.h"
 #include "pins.h"
-#include <event.h>
-#include <style.h>
 #include <Arduino.h>
+#include <Wire.h>
+#include <event.h>
 
 uint8_t *framebuffer = NULL;
 bool first = true;
@@ -26,6 +27,8 @@ void setup() {
 
   epd_init();
 
+  /*Wire.begin(16, 15, 400000U);*/
+  Wire.begin();
   epd_poweron();
   epd_clear();
   epd_poweroff();
@@ -40,7 +43,18 @@ void loop() {
     epd_poweroff();
     first = false;
   }
-  delay(5);
+
+  delay(1000);
+  Wire.requestFrom(0x5F, 1);
+  while (Wire.available()) // If received data is detected.  如果检测到收到数据
+  {
+    Serial.println("RECEIVING");
+    char c = Wire.read(); // Store the received data. 将接收到的数据存储
+    if (c != 0) {
+      Serial.printf("%c", c);
+      Serial.println(c, HEX);
+    }
+  }
 
   /*epd_poweron();*/
   /*epd_draw_hline(10, random(10, EPD_HEIGHT), EPD_WIDTH - 20, 0,
