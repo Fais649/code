@@ -1,0 +1,23 @@
+[1/1406] cd /home/fais/punk.systems/code/esp32/wispr/build/esp-idf/partition_table && /usr/bin/cmake -E echo "Partition table CSV /home/fais/punk.systems/code/esp32/wispr/partitions.csv does not exist." && /usr/bin/cmake -E echo "Either change partition table in menuconfig or create this input file." && /usr/bin/cmake -E remove /home/fais/punk.systems/code/esp32/wispr/build/esp-idf/partition_table/GAlBT.cmake && /usr/bin/cmake -E env "FAIL_MESSAGE=Failing the build (see errors on lines above)" /usr/bin/cmake -P /opt/esp-idf/tools/cmake/scripts/fail.cmake
+FAILED: esp-idf/partition_table/CMakeFiles/partition-table /home/fais/punk.systems/code/esp32/wispr/build/esp-idf/partition_table/CMakeFiles/partition-table 
+cd /home/fais/punk.systems/code/esp32/wispr/build/esp-idf/partition_table && /usr/bin/cmake -E echo "Partition table CSV /home/fais/punk.systems/code/esp32/wispr/partitions.csv does not exist." && /usr/bin/cmake -E echo "Either change partition table in menuconfig or create this input file." && /usr/bin/cmake -E remove /home/fais/punk.systems/code/esp32/wispr/build/esp-idf/partition_table/GAlBT.cmake && /usr/bin/cmake -E env "FAIL_MESSAGE=Failing the build (see errors on lines above)" /usr/bin/cmake -P /opt/esp-idf/tools/cmake/scripts/fail.cmake
+Partition table CSV /home/fais/punk.systems/code/esp32/wispr/partitions.csv does not exist.
+Either change partition table in menuconfig or create this input file.
+CMake Error at /opt/esp-idf/tools/cmake/scripts/fail.cmake:3 (message):
+  Failing the build (see errors on lines above)
+
+
+[2/1406] Generating /home/fais/punk.systems/code/esp32/wispr/build/esp-idf/esp_system/ld/sections.ld.in linker script...
+[3/1406] Generating /home/fais/punk.systems/code/esp32/wispr/build/esp-idf/esp_system/ld/memory.ld linker script...
+[4/1406] Generating ../../partition_table/partition-table.bin
+Partition table binary generated. Contents:
+*******************************************************************************
+# ESP-IDF Partition Table
+# Name, Type, SubType, Offset, Size, Flags
+nvs,data,nvs,0x9000,20K,
+otadata,data,ota,0xe000,8K,
+phy_init,data,phy,0x10000,4K,
+factory,app,factory,0x20000,1600K,
+spiffs,data,spiffs,0x1b0000,1472K,
+*******************************************************************************
+ninja: build stopped: subcommand failed.
