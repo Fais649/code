@@ -60,7 +60,12 @@ static void textarea_event_handler(lv_event_t *e);
 static void keyboard_event_handler(lv_event_t *e);
 
 void load_textbox_content(void) {
-  FILE *file = fopen("/storage/output.txt", "r");
+  const char *date = lv_label_get_text(datepicker_label);
+  char filePath[256]; // Buffer to store the file path
+  snprintf(filePath, sizeof(filePath), "/storage/%s.txt", date);
+  printf("FILEPATH: %s", filePath);
+
+  FILE *file = fopen(filePath, "r");
   if (file) {
     fseek(file, 0, SEEK_END);
     long filesize = ftell(file);
@@ -85,7 +90,12 @@ void load_textbox_content(void) {
 void autosave_timer_callback(lv_timer_t *timer) {
   const char *text = lv_textarea_get_text(textbox);
 
-  FILE *file = fopen("/storage/output.txt", "w");
+  const char *date = lv_label_get_text(datepicker_label);
+  char filePath[256]; // Buffer to store the file path
+  snprintf(filePath, sizeof(filePath), "/storage/%s.txt", date);
+  printf("FILEPATH: %s", filePath);
+
+  FILE *file = fopen(filePath, "w");
   if (file) {
     fprintf(file, "%s", text);
     fclose(file);
@@ -137,16 +147,18 @@ static void calendar_event_callback(lv_event_t *e) {
 
       lv_calendar_set_highlighted_dates(calendar, highlighted_days, 3);
       lv_obj_add_flag(calendar, LV_OBJ_FLAG_HIDDEN);
+
+      load_textbox_content();
     }
   }
 }
 
 static void datepicker_event_callback(lv_event_t *e) {
-    if (lv_obj_is_visible(calendar)) {
-      lv_obj_add_flag(calendar, LV_OBJ_FLAG_HIDDEN); // Hide the calendar
-    } else {
-      lv_obj_clear_flag(calendar, LV_OBJ_FLAG_HIDDEN); // Show the calendar
-    }
+  if (lv_obj_is_visible(calendar)) {
+    lv_obj_add_flag(calendar, LV_OBJ_FLAG_HIDDEN); // Hide the calendar
+  } else {
+    lv_obj_clear_flag(calendar, LV_OBJ_FLAG_HIDDEN); // Show the calendar
+  }
 }
 
 static void keyboard_event_handler(lv_event_t *e) {
@@ -227,8 +239,9 @@ void create_ui(lv_disp_t *disp) {
   lv_calendar_set_today_date(calendar, today.year, today.month, today.day);
   lv_calendar_set_showed_date(calendar, today.year, today.month);
   lv_calendar_set_highlighted_dates(calendar, &today, 1);
-  lv_obj_set_size(calendar, 400, 400);           // Set size of the calendar
-  lv_obj_align(calendar, LV_ALIGN_TOP_MID, 0, lv_obj_get_y2(datepicker)); // Center on the screen
+  lv_obj_set_size(calendar, 400, 400); // Set size of the calendar
+  lv_obj_align(calendar, LV_ALIGN_TOP_MID, 0,
+               lv_obj_get_y2(datepicker)); // Center on the screen
   lv_obj_set_style_bg_color(calendar, lv_color_black(), LV_STATE_DEFAULT);
   lv_obj_set_style_text_color(calendar, lv_color_white(), LV_STATE_DEFAULT);
   lv_obj_set_style_bg_color(calendar, lv_color_black(), LV_PART_ITEMS);
@@ -236,7 +249,7 @@ void create_ui(lv_disp_t *disp) {
   lv_obj_set_style_bg_color(calendar, lv_color_white(), LV_STATE_CHECKED);
   lv_obj_set_style_text_color(calendar, lv_color_black(), LV_STATE_PRESSED);
   lv_obj_add_flag(calendar, LV_OBJ_FLAG_HIDDEN);
-  
+
   static lv_style_t style_btn_checked;
   lv_style_init(&style_btn_checked);
   lv_style_set_text_font(&style_btn_checked, &gohufont_14);

@@ -1,0 +1,341 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyACM0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x400556d5: strlen in ROM
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x400556d2: strlen in ROM
+0x4204a78a: _svfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/svfprintf.c:1521
+0x420414df: snprintf at /builds/idf/crosstool-NG/.build/xtensa-esp-elf/src/newlib/newlib/libc/stdio/snprintf.c:85
+0x4200a089: load_textbox_content at /home/fais/punk.systems/code/esp32/wispr/main/ui.c:65
+0x42009f73: app_main at /home/fais/punk.systems/code/esp32/wispr/main/main.c:490
+0x42057137: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40375ef8: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[1;31mNone[0m
+[0;33mWaiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0m

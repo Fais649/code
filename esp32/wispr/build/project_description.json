@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "wispr",
-    "project_version":    "99b3e4f-dirty",
+    "project_version":    "20bd362-dirty",
     "project_path":       "/home/fais/punk.systems/code/esp32/wispr",
     "idf_path":           "/opt/esp-idf",
     "build_dir":          "/home/fais/punk.systems/code/esp32/wispr/build",

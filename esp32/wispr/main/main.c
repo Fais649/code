@@ -42,7 +42,7 @@ static const char *TAG = "[APP]";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////// Please update the following configuration according to your
-///LCD spec //////////////////////////////
+/// LCD spec //////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #define LCD_PIXEL_CLOCK_HZ (18 * 1000 * 1000)
 #define LCD_BK_LIGHT_ON_LEVEL 1
@@ -99,19 +99,43 @@ SemaphoreHandle_t sem_gui_ready;
 extern void create_ui(lv_disp_t *disp);
 extern void load_textbox_content(void);
 
-void init_spiffs(void) {
-    static wl_handle_t wl_handle;
-    const esp_vfs_fat_mount_config_t mount_config = {
-        .max_files = 4,
-        .format_if_mount_failed = true
-    };
-    esp_err_t err = esp_vfs_fat_spiflash_mount_rw_wl(MOUNT_PATH, "storage", &mount_config, &wl_handle);
-    if (err != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to mount FATFS (%s)", esp_err_to_name(err));
-        return;
-    }
+void init_fs(void) {
+  static wl_handle_t wl_handle;
+  const esp_vfs_fat_mount_config_t mount_config = {
+      .max_files = 4, .format_if_mount_failed = true};
+  esp_err_t err = esp_vfs_fat_spiflash_mount_rw_wl(MOUNT_PATH, "storage",
+                                                   &mount_config, &wl_handle);
+  if (err != ESP_OK) {
+    ESP_LOGE(TAG, "Failed to mount FATFS (%s)", esp_err_to_name(err));
+    return;
+  } else {
+    ESP_LOGI(TAG, "FATFS mounted successfully at %s", MOUNT_PATH);
+  }
+
+  FILE *test_file = fopen("/storage/test.txt", "w");
+  if (test_file) {
+    fprintf(test_file, "Filesystem test.\n");
+    fclose(test_file);
+    ESP_LOGI(TAG, "Test file written successfully.");
+  } else {
+    ESP_LOGE(TAG, "Failed to write test file (%s)", strerror(errno));
+  }
 }
 
+void init_usb_mass_storage(void) {
+    // Initialize TinyUSB stack
+    const tinyusb_config_t tusb_cfg = {};
+    ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
+
+    // Set up the MSC class
+    const tinyusb_config_msc_t msc_cfg = {
+        .pdrv = FF_VOLUMES - 1,  // Use the last volume
+        .root_dir = "/storage",   // Mount point of the filesystem
+        .lun = 0,                 // Logical Unit Number
+        .readonly = false,
+    };
+    ESP_ERROR_CHECK(tinyusb_msc_storage_init(&msc_cfg));
+}
 /*bool is_time_initialized(void) {*/
 /*  nvs_handle_t nvs_handle;*/
 /*  esp_err_t err;*/
@@ -271,7 +295,7 @@ static void lvgl_touch_cb(lv_indev_drv_t *drv, lv_indev_data_t *data) {
 }
 
 void app_main(void) {
-  init_spiffs();
+  init_fs();
 
   esp_err_t ret = nvs_flash_init();
   if (ret == ESP_ERR_NVS_NO_FREE_PAGES ||
@@ -432,7 +456,7 @@ void app_main(void) {
   lv_disp_draw_buf_init(&disp_buf, buf1, buf2, LCD_H_RES * LCD_V_RES);
 #else
   size_t free_psram = heap_caps_get_free_size(MALLOC_CAP_SPIRAM);
-  ESP_LOGI(TAG, "Free PSRAM: %d bytes", free_psram);
+  ESP_LOGI(TAG, "Free PSRAM: %zu bytes", free_psram);
 
   ESP_LOGI(TAG, "Allocate separate LVGL draw buffers from PSRAM");
   buf1 = heap_caps_aligned_alloc(64, LCD_H_RES * 100 * sizeof(lv_color_t),
@@ -442,7 +466,7 @@ void app_main(void) {
   lv_disp_draw_buf_init(&disp_buf, buf1, buf2, LCD_H_RES * 100);
 
   free_psram = heap_caps_get_free_size(MALLOC_CAP_SPIRAM);
-  ESP_LOGI(TAG, "Free PSRAM AFTER buf alloc: %d bytes", free_psram);
+  ESP_LOGI(TAG, "Free PSRAM AFTER buf alloc: %zu bytes", free_psram);
 #endif
 
   ESP_LOGI(TAG, "Register display driver to LVGL");
@@ -488,11 +512,6 @@ void app_main(void) {
   if (lvgl_lock(-1)) {
     create_ui(disp);
     load_textbox_content();
-    /*lv_demo_widgets();*/
-    // lv_demo_benchmark();
-    // lv_demo_music();
-    // lv_demo_stress();
-    // Release the mutex
     lvgl_unlock();
   }
 }
