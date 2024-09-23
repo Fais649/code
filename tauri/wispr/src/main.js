@@ -106,6 +106,14 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  document.querySelectorAll(".text").forEach((focused) => {
+    focused.addEventListener("focus", () => {
+      focused.style.opacity = 0;
+      setTimeout(() => focused.style.opacity = 1);
+      alert("focused");
+    });
+  });
+
   document.addEventListener('focusin', toggleDimmed);
   document.addEventListener('focusout', toggleDimmed);
 
@@ -280,6 +288,12 @@ function createTodoListItem(todo_list, key, todoText = "") {
   let type = todoText.length > 0 ? 'li' : 'input';
   let todo_item_text = document.createElement(type);
   todo_item_text.classList.add("todo-item-text");
+    todo_item_text.addEventListener("focus", () => {
+      todo_item_text.style.opacity = 0;
+      setTimeout(() => todo_item_text.style.opacity = 1);
+      alert("focused");
+    });
+
   if (todoText.length > 0) {
     todo_item_text.innerText = todoText;
   }
@@ -333,6 +347,11 @@ async function addTodo() {
   todo_item.appendChild(box);
   let todo_item_text = document.createElement('input');
   todo_item_text.classList.add("todo-item-text");
+    todo_item_text.addEventListener("focus", () => {
+      todo_item_text.style.opacity = 0;
+      setTimeout(() => todo_item_text.style.opacity = 1);
+      alert("focused");
+    });
   todo_item_text.addEventListener('keypress', async (e) => {
     if (e.key === 'Enter') {
       let item_new = document.createElement('li');
