@@ -122,20 +122,20 @@ void init_fs(void) {
   }
 }
 
-void init_usb_mass_storage(void) {
-    // Initialize TinyUSB stack
-    const tinyusb_config_t tusb_cfg = {};
-    ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));
-
-    // Set up the MSC class
-    const tinyusb_config_msc_t msc_cfg = {
-        .pdrv = FF_VOLUMES - 1,  // Use the last volume
-        .root_dir = "/storage",   // Mount point of the filesystem
-        .lun = 0,                 // Logical Unit Number
-        .readonly = false,
-    };
-    ESP_ERROR_CHECK(tinyusb_msc_storage_init(&msc_cfg));
-}
+/*void init_usb_mass_storage(void) {*/
+/*    // Initialize TinyUSB stack*/
+/*    const tinyusb_config_t tusb_cfg = {};*/
+/*    ESP_ERROR_CHECK(tinyusb_driver_install(&tusb_cfg));*/
+/**/
+/*    // Set up the MSC class*/
+/*    const tinyusb_config_msc_t msc_cfg = {*/
+/*        .pdrv = FF_VOLUMES - 1,  // Use the last volume*/
+/*        .root_dir = "/storage",   // Mount point of the filesystem*/
+/*        .lun = 0,                 // Logical Unit Number*/
+/*        .readonly = false,*/
+/*    };*/
+/*    ESP_ERROR_CHECK(tinyusb_msc_storage_init(&msc_cfg));*/
+/*}*/
 /*bool is_time_initialized(void) {*/
 /*  nvs_handle_t nvs_handle;*/
 /*  esp_err_t err;*/

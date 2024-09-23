@@ -1,0 +1,51 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyACM0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40048df3: uart_rx_readbuff in ROM
+[0m
+[0;33m0x4200b35d: lv_obj_mark_layout_as_dirty at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/core/lv_obj_pos.c:290
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x4200b35a: lv_obj_mark_layout_as_dirty at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/core/lv_obj_pos.c:289
+0x4200a976: lv_obj_class_init_obj at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/core/lv_obj_class.c:106
+0x42015957: lv_label_create at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/widgets/lv_label.c:77
+0x4200917c: app_main at /home/fais/punk.systems/code/esp32/epdwispr/main/main.c:12 (discriminator 1)
+0x4204263f: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+0x4037b5d9: vPortTaskWrapper at /opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x403759bc: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200b35d: lv_obj_mark_layout_as_dirty at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/core/lv_obj_pos.c:290
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x4200b35a: lv_obj_mark_layout_as_dirty at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/core/lv_obj_pos.c:289
+0x4200a976: lv_obj_class_init_obj at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/core/lv_obj_class.c:106
+0x42015957: lv_label_create at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/widgets/lv_label.c:77
+0x4200917c: app_main at /home/fais/punk.systems/code/esp32/epdwispr/main/main.c:12 (discriminator 1)
+0x4204263f: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+0x4037b5d9: vPortTaskWrapper at /opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x403759bc: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[0;33m0x4200b35d: lv_obj_mark_layout_as_dirty at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/core/lv_obj_pos.c:290
+[0m
+[0;33m0x400556d5: strlen in ROM
+0x400556e5: strlen in ROM
+[0m
+[0;33m0x4200b35a: lv_obj_mark_layout_as_dirty at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/core/lv_obj_pos.c:289
+0x4200a976: lv_obj_class_init_obj at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/core/lv_obj_class.c:106
+0x42015957: lv_label_create at /home/fais/punk.systems/code/esp32/epdwispr/components/lvgl/src/widgets/lv_label.c:77
+0x4200917c: app_main at /home/fais/punk.systems/code/esp32/epdwispr/main/main.c:12 (discriminator 1)
+0x4204263f: main_task at /opt/esp-idf/components/freertos/app_startup.c:208
+0x4037b5d9: vPortTaskWrapper at /opt/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m0x403759bc: esp_restart_noos at /opt/esp-idf/components/esp_system/port/soc/esp32s3/system_internal.c:158
+[0m
+[1;31mNone[0m
+[0;33mWaiting for the device to reconnect[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m.[0m[0;33m[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0;33mWriting to serial is timing out. Please make sure that your application supports an interactive console and that you have picked the correct console for serial communication.[0m
+[0m

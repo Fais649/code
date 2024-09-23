@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tauri App</title>
+  <script type="module" src="/main.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row topbar">
+      <div class="row logo left">
+        <h1>&#x280B</h1>
+      </div>
+      <div class="row right">
+        <div class="datepicker">
+          <div class="yesterday">&#xeab5</div>
+          <div class="date" id="date">Date</div>
+          <div class="tomorrow">&#xeab6</div>
+        </div>
+        <button class="save">&#xf0c7</button>
+      </div>
+    </div>
+    <div class="row content">
+      <div class="box-wrapper right">
+        <div class="box note">
+          <div class="box-header">
+            <div class="note-header">notes;</div>
+          </div>
+          <textarea name="note" class="text" id="text-note"></textarea>
+        </div>
+      </div>
+      <div class="box-wrapper left">
+        <div class="box todo">
+          <div class="box-header">
+            <div class="todo-header">todo;</div>
+            <div>
+              <label class="add-todo">+</label>
+            </div>
+          </div>
+          <div name="todo" class="todo-list" id="todo-list">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,5 +1,7 @@
 #include "core/lv_disp.h"
 #include "core/lv_event.h"
+#include "core/lv_obj_tree.h"
+#include "extra/layouts/flex/lv_flex.h"
 #include "extra/themes/default/lv_theme_default.h"
 #include "extra/widgets/calendar/lv_calendar.h"
 #include "extra/widgets/keyboard/lv_keyboard.h"
@@ -22,11 +24,17 @@ const char *build_time = __TIME__;
 
 static const lv_font_t *font;
 
+lv_obj_t *mainwrapper;
+lv_obj_t *topbarwrapper;
+lv_obj_t *bodywrapper;
+
 lv_obj_t *textbox;
+lv_obj_t *todolist;
 lv_obj_t *datepicker;
-lv_obj_t *keyboard;
 lv_obj_t *datepicker_label;
 lv_obj_t *calendar;
+
+lv_obj_t *keyboard;
 
 static void draw_event_cb(lv_event_t *e) {
   lv_obj_draw_part_dsc_t *dsc = lv_event_get_draw_part_dsc(e);
@@ -67,8 +75,8 @@ void load_textbox_content(void) {
 
   FILE *file = fopen(filePath, "r");
   if (file) {
-    fseek(file, 0, SEEK_END);
     long filesize = ftell(file);
+    fseek(file, 0, SEEK_END);
     rewind(file);
 
     char *text = (char *)malloc(filesize + 1);
@@ -164,17 +172,34 @@ static void datepicker_event_callback(lv_event_t *e) {
 static void keyboard_event_handler(lv_event_t *e) {
   if (lv_obj_is_visible(keyboard) && e->code == LV_EVENT_CANCEL) {
     lv_obj_add_flag(keyboard, LV_OBJ_FLAG_HIDDEN);
-    lv_obj_set_height(textbox, LV_VER_RES - lv_obj_get_y2(datepicker));
-    lv_obj_clear_state(textbox, LV_STATE_FOCUSED);
+
+    lv_obj_set_height(bodywrapper, LV_VER_RES - lv_obj_get_y2(datepicker));
+    int children = lv_obj_get_child_cnt(bodywrapper);
+
+    for (int i = 0; i < children; i++) {
+      lv_obj_t *child = lv_obj_get_child(bodywrapper, i);
+      lv_obj_set_height(child, LV_VER_RES - lv_obj_get_y2(datepicker));
+      lv_obj_clear_state(child, LV_STATE_FOCUSED);
+    }
   }
 }
 
 static void textarea_event_handler(lv_event_t *e) {
   lv_obj_t *textarea = lv_event_get_target(e);
+  lv_obj_t *wrapper = lv_obj_get_parent(textarea);
 
   if (e->code == LV_EVENT_FOCUSED) {
-    lv_obj_set_height(textarea, LV_VER_RES - lv_obj_get_height(keyboard) -
-                                    lv_obj_get_height(datepicker));
+    lv_obj_set_height(wrapper, LV_VER_RES - lv_obj_get_height(keyboard) -
+                                   lv_obj_get_height(datepicker));
+    int children = lv_obj_get_child_cnt(wrapper);
+
+    for (int i = 0; i < children; i++) {
+      lv_obj_t *child = lv_obj_get_child(bodywrapper, i);
+    lv_obj_set_height(child, LV_VER_RES - lv_obj_get_height(keyboard) -
+                                   lv_obj_get_height(datepicker));
+    }
+
+    lv_keyboard_set_textarea(keyboard, textarea);
     lv_obj_clear_flag(keyboard, LV_OBJ_FLAG_HIDDEN);
   }
 }
@@ -183,15 +208,32 @@ void create_ui(lv_disp_t *disp) {
   lv_theme_default_init(disp, lv_color_black(), lv_color_white(), true,
                         &gohufont_14);
   lv_obj_t *screen = lv_disp_get_scr_act(disp);
-  lv_obj_t *scr = lv_obj_create(screen);
-  lv_obj_set_size(scr, LV_PCT(100), LV_PCT(100)); // Full screen container
-  lv_obj_set_layout(scr, LV_LAYOUT_FLEX);         // Set flex layout
-  lv_obj_set_flex_flow(scr, LV_FLEX_FLOW_ROW_WRAP);
-  lv_obj_set_style_pad_all(scr, 0, LV_PART_MAIN);
-  lv_obj_set_style_pad_gap(scr, 0, 0);
-  lv_obj_clear_flag(scr, LV_OBJ_FLAG_SCROLLABLE);
 
-  datepicker = lv_btn_create(scr);
+  mainwrapper = lv_obj_create(screen);
+  lv_obj_set_size(mainwrapper, LV_PCT(100), LV_PCT(100));
+  lv_obj_set_layout(mainwrapper, LV_LAYOUT_FLEX);
+  lv_obj_set_flex_flow(mainwrapper, LV_FLEX_FLOW_ROW_WRAP);
+  lv_obj_set_style_pad_all(mainwrapper, 0, LV_PART_MAIN);
+  lv_obj_set_style_pad_gap(mainwrapper, 0, 0);
+  lv_obj_clear_flag(mainwrapper, LV_OBJ_FLAG_SCROLLABLE);
+
+  topbarwrapper = lv_obj_create(mainwrapper);
+  lv_obj_set_size(topbarwrapper, LV_PCT(100), LV_PCT(10));
+  lv_obj_set_layout(topbarwrapper, LV_LAYOUT_FLEX);
+  lv_obj_set_flex_flow(topbarwrapper, LV_FLEX_FLOW_COLUMN_WRAP);
+  lv_obj_set_style_pad_all(topbarwrapper, 0, LV_PART_MAIN);
+  lv_obj_set_style_pad_gap(topbarwrapper, 0, 0);
+  lv_obj_clear_flag(topbarwrapper, LV_OBJ_FLAG_SCROLLABLE);
+
+  bodywrapper = lv_obj_create(mainwrapper);
+  lv_obj_set_size(bodywrapper, LV_PCT(100), LV_PCT(90));
+  lv_obj_set_layout(bodywrapper, LV_LAYOUT_FLEX);
+  lv_obj_set_flex_flow(bodywrapper, LV_FLEX_FLOW_COLUMN_WRAP);
+  lv_obj_set_style_pad_all(bodywrapper, 0, LV_PART_MAIN);
+  lv_obj_set_style_pad_gap(bodywrapper, 0, 0);
+  lv_obj_clear_flag(bodywrapper, LV_OBJ_FLAG_SCROLLABLE);
+
+  datepicker = lv_btn_create(topbarwrapper);
   lv_obj_set_size(datepicker, LV_HOR_RES, LV_VER_RES * 0.1);
   lv_obj_set_style_bg_color(datepicker, lv_color_black(), LV_STATE_DEFAULT);
   lv_obj_set_style_text_color(datepicker, lv_color_white(), LV_STATE_DEFAULT);
@@ -208,9 +250,18 @@ void create_ui(lv_disp_t *disp) {
   strftime(date_str, sizeof(date_str), "%Y-%m-%d", t);
   lv_label_set_text(datepicker_label, date_str);
 
-  textbox = lv_textarea_create(scr);
-  lv_obj_set_size(textbox, LV_HOR_RES, LV_VER_RES);
-  lv_obj_align(textbox, LV_ALIGN_TOP_MID, 0, lv_obj_get_y2(datepicker));
+  todolist = lv_textarea_create(bodywrapper);
+  lv_obj_set_size(todolist, LV_HOR_RES * 0.5, LV_VER_RES * 0.9);
+  lv_obj_align(todolist, LV_ALIGN_TOP_LEFT, 0, lv_obj_get_y2(datepicker));
+  lv_obj_set_style_bg_color(todolist, lv_color_black(), LV_STATE_DEFAULT);
+  lv_obj_set_style_text_color(todolist, lv_color_white(), LV_STATE_DEFAULT);
+  lv_obj_set_style_text_color(todolist, lv_color_white(), LV_PART_CURSOR);
+  lv_obj_set_style_bg_color(todolist, lv_color_white(), LV_PART_CURSOR);
+  lv_obj_add_event_cb(todolist, textarea_event_handler, LV_EVENT_FOCUSED, NULL);
+
+  textbox = lv_textarea_create(bodywrapper);
+  lv_obj_set_size(textbox, LV_HOR_RES * 0.5, LV_VER_RES * 0.9);
+  lv_obj_align(textbox, LV_ALIGN_TOP_RIGHT, 0, lv_obj_get_y2(datepicker));
   lv_obj_set_style_bg_color(textbox, lv_color_black(), LV_STATE_DEFAULT);
   lv_obj_set_style_text_color(textbox, lv_color_white(), LV_STATE_DEFAULT);
   lv_obj_set_style_text_color(textbox, lv_color_white(), LV_PART_CURSOR);
@@ -218,7 +269,7 @@ void create_ui(lv_disp_t *disp) {
   lv_obj_add_event_cb(textbox, textarea_event_handler, LV_EVENT_FOCUSED, NULL);
   /*lv_obj_set_style_pad_all(textbox, 0, 0);*/
 
-  keyboard = lv_keyboard_create(scr);
+  keyboard = lv_keyboard_create(mainwrapper);
   lv_obj_set_size(keyboard, LV_HOR_RES, LV_VER_RES * 0.667);
   lv_obj_set_style_bg_color(keyboard, lv_color_black(), LV_PART_MAIN);
   lv_obj_set_style_text_color(keyboard, lv_color_white(), LV_PART_MAIN);
@@ -228,20 +279,19 @@ void create_ui(lv_disp_t *disp) {
   lv_obj_set_style_text_color(keyboard, lv_color_white(), LV_PART_ANY);
   lv_obj_add_flag(keyboard, LV_OBJ_FLAG_HIDDEN);
   lv_obj_align(keyboard, LV_ALIGN_BOTTOM_MID, 0, lv_obj_get_y2(textbox));
-  lv_keyboard_set_textarea(keyboard, textbox);
+  /*lv_keyboard_set_textarea(keyboard, textbox);*/
   lv_obj_add_event_cb(keyboard, keyboard_event_handler, LV_EVENT_CANCEL, NULL);
   lv_timer_create(autosave_timer_callback, TIMER_PERIOD_MS, NULL);
 
   calendar = lv_calendar_create(lv_scr_act());
   lv_obj_add_event_cb(calendar, calendar_event_callback, LV_EVENT_VALUE_CHANGED,
-                      NULL); // Trigger only on date selection
+                      NULL);
   lv_calendar_date_t today = getTodayDate();
   lv_calendar_set_today_date(calendar, today.year, today.month, today.day);
   lv_calendar_set_showed_date(calendar, today.year, today.month);
   lv_calendar_set_highlighted_dates(calendar, &today, 1);
-  lv_obj_set_size(calendar, 400, 400); // Set size of the calendar
-  lv_obj_align(calendar, LV_ALIGN_TOP_MID, 0,
-               lv_obj_get_y2(datepicker)); // Center on the screen
+  lv_obj_set_size(calendar, 400, 400);
+  lv_obj_align(calendar, LV_ALIGN_TOP_MID, 0, lv_obj_get_y2(datepicker));
   lv_obj_set_style_bg_color(calendar, lv_color_black(), LV_STATE_DEFAULT);
   lv_obj_set_style_text_color(calendar, lv_color_white(), LV_STATE_DEFAULT);
   lv_obj_set_style_bg_color(calendar, lv_color_black(), LV_PART_ITEMS);

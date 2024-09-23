@@ -1,116 +1,336 @@
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
+@font-face {
+  font-family: 'GohuFont uni11 Nerd Font Mono';
+  src: url('assets/gohufont_11.ttf');
 }
 
-.logo.typescript:hover {
-  filter: drop-shadow(0 0 2em #2d79c7);
-}
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "GohuFont uni11 Nerd Font Mono";
   font-size: 16px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 200;
 
-  color: #0f0f0f;
-  background-color: #f6f6f6;
-
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-color: #000000 !important;
+  color: #fff;
+
+  --border-radius: 10px;
+}
+
+.titlebar {
+  background-color: #000000;
 }
 
 .container {
-  margin: 0;
-  padding-top: 10vh;
+  font-family: "GohuFont uni11 Nerd Font Mono";
+  width: 100%;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
-}
-
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #000000;
+  color: #fff;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 .row {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.content {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
 }
 
-a:hover {
-  color: #535bf2;
+.left {
+  order: 1;
 }
 
-h1 {
-  text-align: center;
+.right {
+  order: 2;
+  align-content: flex-end;
+  justify-content: flex-end;
 }
 
-input,
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0f0f0f;
-  background-color: #ffffff;
-  transition: border-color 0.25s;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+.box-wrapper {
+  margin-top: 20px;
 }
 
-button {
-  cursor: pointer;
+.box-wrapper.right {
+  margin-left: 30px;
 }
 
-button:hover {
-  border-color: #396cd8;
-}
-button:active {
-  border-color: #396cd8;
-  background-color: #e8e8e8;
+@media (max-width: 1080px) and (max-height: 900px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .box-wrapper.left {
+    margin-top: 20px;
+  }
+
+  .box-wrapper.right {
+    margin-left: 0px;
+    margin-top: 40px;
+  }
+
+  .box:focus-within {
+    position: fixed;
+    background-color: #000;
+    transform: scale(1.4);
+    box-shadow: 0px 0px;
+  }
+
+  .box-wrapper.right .box:focus-within {
+    translate: 0 -90%;
+    transition: all 0.1s linear;
+  }
+
+  .box-wrapper.left .box:focus-within {
+    translate: 0 30%;
+    transition: all 0.1s linear;
+  }
+
+  .box-wrapper:has(.box:focus-within) {
+    border-style: none;
+    box-shadow: none;
+  }
+
 }
 
-input,
-button {
+@media (max-width: 1080px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .box-wrapper.left {
+    margin-top: 20px;
+  }
+
+  .box-wrapper.right {
+    margin-left: 0px;
+    margin-top: 40px;
+  }
+
+  .box:focus-within {
+    position: fixed;
+    background-color: #000;
+    transform: scale(1.4);
+    box-shadow: 0px 0px;
+  }
+
+  .box-wrapper.right .box:focus-within {
+    /*translate: 0 -90%;*/
+  }
+
+  .box-wrapper.left .box:focus-within {
+    /*translate: 0 30%;*/
+  }
+
+  .box-wrapper:has(.box:focus-within) {
+    border-style: none;
+    box-shadow: none;
+  }
+
+}
+
+.topbar {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  min-width: 230px;
+  height: 100px;
+}
+
+.logo {
+  padding-top: 15px;
+  font-size: 20px;
+  align-self: center;
+  justify-self: center;
+  width: 100px;
+}
+
+.datepicker {
+  min-width: 300px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.yesterday,
+.date,
+.tomorrow {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.save {
+  font-family: "GohuFont uni11 Nerd Font Mono";
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding-right: 10px;
+  background-color: #000;
+  border: none;
+  color: #fff;
+  margin-right: 20px;
+}
+
+.box {
+  display: flex;
+  height: 250px;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  border-style: dashed;
+  border-left-style: solid;
+  border-bottom-style: solid;
+  border-width: 2px;
+  background-color: #000;
+  transition: all 0.1s linear;
+  box-shadow: -6px 6px;
+}
+
+.box-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 250px;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  transition: all 0.1s linear;
+}
+
+.box:focus-within {
+  position: fixed;
+  border: 2px solid #fff;
+  background-color: #000;
+  transform: scale(1.2);
+  box-shadow: 0px 0px;
+}
+
+.box-wrapper.right .box:focus-within {
+  position: fixed;
+  transform: scale(1.1);
+}
+
+.box-wrapper.left .box:focus-within {
+  position: fixed;
+  transform: scale(1.2);
+}
+
+.box-wrapper:has(.box:focus-within) {
+  border-style: none;
+  box-shadow: none;
+}
+
+.text {
+  max-width: 100%;
+  height: 100%;
+  padding: 20px;
+  border: 0px;
+  border-top: 2px dotted #fff;
+  overflow: scroll;
+  background-color: #000;
+  color: #fff;
+  resize: none;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-top: 2px dotted #fff;
+  background-color: #000;
+  color: #fff;
+  overflow: scroll;
+}
+
+.box-header {
+  display: flex;
+  flex-direction: row;
+  min-height: 50px;
+  max-height: 50px;
+  align-items: center;
+  font-weight: 600;
+}
+
+.todo-header {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.note-header {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.add-todo {
+  width: 100%;
+  margin-right: 20px;
+}
+
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  background: none;
+  color: #fff;
+  padding: 0px 30px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.todo-item-text {
+  background: none;
+  color: #fff;
+}
+
+input.todo-item-text {
+  border: 1px solid #fff;
+  text-justify: center;
+  height: 20px;
+  max-width: 70%;
+  justify-content: flex-end;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.input:focus {
   outline: none;
+  border-color: #fff;
+  box-shadow: inset 0 1px 4px #fff, 0 0 20px 2px #fff;
 }
 
-#greet-input {
-  margin-right: 5px;
+.box-todo-item {
+  min-width: 40px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
-  }
-
-  a:hover {
-    color: #24c8db;
-  }
-
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
-  }
-  button:active {
-    background-color: #0f0f0f69;
-  }
+li.todo-item-text {
+  align-self: flex-start;
+  height: 20px;
+  max-height: 20px;
+  padding-left: 20px;
+  list-style-type: none;
 }
