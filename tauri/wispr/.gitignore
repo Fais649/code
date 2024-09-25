@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+base_cert.txt
+base_cert_pass.txt
+profile.txt
+wisprdevfaisiphone15.mobileprovision
+
+
