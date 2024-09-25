@@ -10,6 +10,7 @@
     "@tauri-apps/cli": ">=2.0.0-rc.0"
   },
   "dependencies": {
+    "@shadcn/ui": "^0.0.4",
     "@tauri-apps/plugin-fs": "^2.0.0-rc",
     "@tauri-apps/plugin-shell": "^2.0.0-rc"
   }

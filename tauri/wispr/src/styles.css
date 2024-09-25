@@ -16,27 +16,47 @@
   padding: 0;
   box-sizing: border-box;
 
-  background-color: #000000 !important;
-  color: #fff;
+  background-color: var(--background-color-main) !important;
+  color: var(--foreground-color-main);
 
-  --border-radius: 10px;
+  --background-color-main: #000;
+  --foreground-color-main: #fff;
+
+  --border-radius-button: 20px;
+  --border-radius-box: 2px;
+
+  --width-window-min: 230px;
+  --width-ui-max: 800px;
+
+  --width-box: 300px;
+  --height-box: 250px;
+  --height-box-header: 50px;
+  --padding-box-header-top: 20px;
+
+  --width-topbar-min: var(--width-box);
+  --width-topbar-max: var(--width-ui-max);
+  --height-topbar: 100px;
+
+  --size-logo: 20px;
+  --width-logo: var(--height-topbar);
+  --padding-logo-top: 15px;
+  --padding-container-bottom: var(--height-topbar);
 }
 
 .titlebar {
-  background-color: #000000;
+  background-color: var(--background-color-main);
 }
 
 .container {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  width: 100%;
-  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: #000000;
-  color: #fff;
-  height: 100%
+  height: 100%;
+  width: 100%;
+  padding-bottom: var(--padding-container-bottom);
+  background-color: var(--background-color-main);
+  color: var(--foreground-color-main);
 }
 
 body {
@@ -52,9 +72,10 @@ body {
 }
 
 .content {
-  margin: 0;
   display: flex;
   flex-direction: row;
+  max-width: var(--width-ui-max);
+  margin: 0;
 }
 
 .left {
@@ -63,7 +84,6 @@ body {
 
 .right {
   order: 2;
-  align-content: flex-end;
   justify-content: flex-end;
 }
 
@@ -80,20 +100,17 @@ body {
     flex-direction: column;
   }
 
-  .box-wrapper.left {
-    margin-top: 20px;
-  }
-
   .box-wrapper.right {
     margin-left: 0px;
     margin-top: 40px;
+    z-index: 0;
   }
 
   .box:focus-within {
     position: fixed;
     background-color: #000;
-    transform: scale(1.4);
     box-shadow: 0px 0px;
+    transform: scale(1.4);
   }
 
   .box-wrapper.right .box:focus-within {
@@ -109,6 +126,7 @@ body {
   .box-wrapper:has(.box:focus-within) {
     border-style: none;
     box-shadow: none;
+    z-index: 1;
   }
 
 }
@@ -116,6 +134,7 @@ body {
 @media (max-width: 1080px) {
   .content {
     flex-direction: column;
+    height: auto;
   }
 
   .box-wrapper.left {
@@ -127,6 +146,8 @@ body {
     margin-top: 40px;
   }
 
+
+
   .box:focus-within {
     position: fixed;
     background-color: #000;
@@ -135,46 +156,36 @@ body {
     box-shadow: 0px 0px;
   }
 
-  .box-wrapper.right .box:focus-within {
-      outline: #fff;
-    /*translate: 0 -90%;*/
-  }
-
-  .box-wrapper.left .box:focus-within {
-    /*translate: 0 30%;*/
-  }
-
   .box-wrapper:has(.box:focus-within) {
     border-style: none;
     box-shadow: none;
   }
-
 }
 
 .topbar {
   flex: 1;
   width: 100%;
-  max-width: 900px;
-  min-width: 230px;
-  height: 100px;
+  max-width: var(--width-topbar-max);
+  min-width: var(--width-topbar-min);
+  height: var(--height-topbar);
 }
 
 .logo {
-  padding-top: 15px;
-  font-size: 20px;
+  padding-top: var(--padding-logo-top);
+  font-size: var(--size-logo);
   align-self: center;
   justify-self: center;
-  width: 100px;
+  width: var(--width-logo);
 }
 
 .datepicker {
-  min-width: 300px;
-  max-width: 300px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
+.dayOfWeek,
+.dateSeperator,
 .yesterday,
 .date,
 .tomorrow {
@@ -182,23 +193,28 @@ body {
   padding-right: 5px;
 }
 
+.clickable:active {
+  background-color: var(--foreground-color-main);
+  color: var(--background-color-main);
+}
+
 .save {
   font-family: "GohuFont uni11 Nerd Font Mono";
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  padding-right: 10px;
-  background-color: #000;
-  border: none;
-  color: #fff;
+  font-size: 25px;
+  text-align: center;
+  text-justify: auto;
+  background-color: var(--background-color-main);
+  border-radius: var(--border-radius-button);
+  color: var(--foreground-color-main);
   margin-right: 20px;
+  margin-left: 20px;
+  width: 40px;
 }
 
 .box {
   display: flex;
-  height: 250px;
-  width: 300px;
+  height: var(--height-box);
+  width: var(--width-box);
   margin: 0;
   padding: 0;
   flex-direction: column;
@@ -206,8 +222,8 @@ body {
   border-left-style: solid;
   border-bottom-style: solid;
   border-width: 2px;
-  background-color: #000;
-    transition: all 0.18s ease-out;
+  background-color: var(--background-color-main);
+  transition: all 0.18s ease-out;
   box-shadow: -6px 6px;
 }
 
@@ -216,17 +232,17 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 250px;
-  width: 300px;
+  height: var(--height-box);
+  width: var(--width-box);
   margin: 0;
   padding: 0;
-    transition: all 0.18s ease-out;
+  transition: all 0.18s ease-out;
 }
 
 .box:focus-within {
   position: fixed;
-  border: 2px solid #fff;
-  background-color: #000;
+  border: var(--border-radius-box) solid var(--foreground-color-main);
+  background-color: var(--background-color-main);
   transform: scale(1.2);
   box-shadow: 0px 0px;
 }
@@ -252,92 +268,119 @@ body {
   height: 100%;
   padding: 20px;
   border: 0px;
-  border-top: 2px dotted #fff;
+  border-top: 2px dotted var(--foreground-color-main);
   overflow: scroll;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--background-color-main);
+  color: var(--foreground-color-main);
   resize: none;
 }
 
 .todo-list {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
-  height: 100%;
-  padding: 20px;
-  border-top: 2px dotted #fff;
-  background-color: #000;
-  color: #fff;
+  justify-content: flex-start;
+  align-items: flex-start;
   overflow: scroll;
+  height: 100%;
+  max-width: 100%;
+  padding: 20px 0px;
+  border-top: 2px dotted var(--foreground-color-main);
+  background-color: var(--background-color-main);
+  color: var(--foreground-color-main);
 }
 
 .box-header {
   display: flex;
   flex-direction: row;
-  min-height: 50px;
-  max-height: 50px;
   align-items: center;
+  min-height: var(--height-box-header);
+  max-height: var(--height-box-header);
+  width: 100%;
   font-weight: 600;
 }
 
 .todo-header {
   width: 100%;
-  margin-left: 20px;
+  margin-left: var(--padding-box-header-top);
 }
 
 .note-header {
   width: 100%;
-  margin-left: 20px;
+  margin-left: var(--padding-box-header-top);
 }
 
 .add-todo {
   width: 100%;
-  margin-right: 20px;
+  margin-right: var(--padding-box-header-top);
 }
-
 
 .todo-item {
   display: flex;
   flex-direction: row;
-  height: 40px;
-  background: none;
-  color: #fff;
-  padding: 0px 30px;
-  align-items: flex-start;
-  justify-content: flex-start;
+  max-width: 100%;
+  min-height: 25px;
+  color: var(--foreground-color-main);
 }
 
 .todo-item-text {
   background: none;
-  color: #fff;
+  color: var(--foreground-color-main);
+  height: 20px;
+  width: 200px;
+  margin-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  list-style-type: none;
+  transition: all 0.18s ease-out;
 }
 
+.todo-item-text.done {
+  stroke-width: 5px;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.todo-item-text.expand {
+  text-wrap: wrap;
+  word-wrap: break-word;
+  background-color: #000;
+  color: #eee;
+  min-height: fit-content;
+  list-style-type: none;
+  max-height: fit-content;
+  border-top: 2px dotted #bbb;
+  border-right: 2px dotted #bbb;
+  box-shadow: -2px 2px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.expand {
+  text-wrap: wrap;
+  word-wrap: break-word;
+  background-color: #000;
+  color: #fff;
+  min-height: fit-content;
+  list-style-type: none;
+  max-height: fit-content;
+}
+
+
 input.todo-item-text {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  border: 1px solid #fff;
+  border: 1px solid var(--foreground-color-main);
   text-justify: center;
   height: 20px;
-  max-width: 70%;
-  justify-content: flex-end;
-  padding-left: 7px;
-  padding-right: 7px;
 }
 
 .input:focus {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  outline: #fff;
-  border-color: #fff;
-  box-shadow: inset 0 1px 4px #fff, 0 0 20px 2px #fff;
+  outline: var(--foreground-color-main);
+  border-color: var(--foreground-color-main);
+  box-shadow: inset 0 1px 4px #fff, 0 0 20px 2px var(--foreground-color-main);
 }
 
 .box-todo-item {
-  min-width: 40px;
-}
-
-li.todo-item-text {
-  align-self: flex-start;
-  height: 20px;
-  max-height: 20px;
-  padding-left: 20px;
-  list-style-type: none;
+  text-wrap: nowrap;
+  margin-left: 20px;
+  margin-right: 5px;
 }

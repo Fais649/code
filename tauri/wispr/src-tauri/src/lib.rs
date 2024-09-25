@@ -73,7 +73,7 @@ fn get_data_dir(app: tauri::AppHandle) -> PathBuf {
     let docs_dir = docs.join("wispr");
 
     if !docs_dir.is_dir() {
-        let _ = fs::create_dir(docs_dir.clone().as_path());
+        let _ = create_dir(docs_dir.clone().as_path());
     }
 
     docs_dir

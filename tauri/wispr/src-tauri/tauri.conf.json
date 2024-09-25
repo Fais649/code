@@ -12,8 +12,12 @@
       {
         "title": "wispr",
         "width": 800,
-        "height": 600,
-        "decorations": true
+        "height": 800,
+        "minWidth": 500,
+        "minHeight": 800,
+        "focus": false,
+        "acceptFirstMouse": true,
+        "alwaysOnTop": true
       }
     ],
     "security": {

@@ -1,9 +1,22 @@
 const invoke = window.__TAURI__.core.invoke;
 
 window.addEventListener("DOMContentLoaded", () => {
-  fetchTodayDate();
+  setDateToToday();
   loadContent(true);
 
+  setupDatePickerEvents();
+  setupSaveEvents();
+  setupTodoBoxEvents();
+
+  document.querySelectorAll(".text").forEach((focused) => {
+    focused.addEventListener("focus", () => {
+      focused.style.opacity = 0;
+      setTimeout(() => focused.style.opacity = 1);
+    });
+  });
+});
+
+function setupDatePickerEvents() {
   document.querySelector(".tomorrow").addEventListener("click", async (e) => {
     e.preventDefault();
     const dateEl = document.querySelector(".date");
@@ -30,14 +43,27 @@ window.addEventListener("DOMContentLoaded", () => {
       console.error("Error during date change:", error);
       alert("An error occurred while changing the date.");
     }
-  })
+  });
 
+  document.querySelector(".date").addEventListener("click", async (e) => {
+    e.preventDefault();
+    await toggleCalendar();
+  });
+
+  document.querySelector("#dayOfWeek").addEventListener("click", async (e) => {
+    e.preventDefault();
+    await saveContent();
+    await setDateToToday();
+    await loadContent();
+  });
+}
+
+function setupSaveEvents() {
   document.querySelector(".save").addEventListener("click", async (e) => {
     e.preventDefault();
     try {
       const result = await saveContent();
       if (result === "SAVED") {
-        //alert("Content saved successfully!");
       } else {
         console.error("Unexpected save result:", result);
         alert("An unexpected error occurred while saving content.");
@@ -47,13 +73,15 @@ window.addEventListener("DOMContentLoaded", () => {
       alert("An error occurred while saving content.");
     }
   });
+}
 
+
+function setupTodoBoxEvents() {
   document.querySelector(".add-todo").addEventListener("click", async (e) => {
     e.preventDefault();
     try {
       const result = await addTodo();
       if (result === "yes") {
-        //alert("todo added");
       } else {
         console.error("Unexpected add-todo result:", result);
         alert("An unexpected error occurred while saving content.");
@@ -64,22 +92,11 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
   document.querySelectorAll(".box-todo-item").forEach((boxItem) => {
-    boxItem.addEventListener("click", (e) => {
+    boxItem.addEventListener("click", async (e) => {
       e.preventDefault();
-      const parentElement = boxItem.parentElement;
-      console.log('clicked box');
-
-      if (parentElement) {
-        parentElement.remove();
-        console.log("Parent element removed successfully.");
-
-        // Optional: Update the underlying data or save changes
-        // await saveContent(); // If using async function and saveContent is defined
-      } else {
-        console.error("Parent element not found.");
-        alert("Unable to delete the item. Parent element not found.");
-      }
+      toggleCheckTodoEvent(e);
     });
   });
 
@@ -91,40 +108,40 @@ window.addEventListener("DOMContentLoaded", () => {
         item_new.id = item_text.id
         item_new.innerText = item_text.value;
         item_new.classList = item_text.classList;
+        await addExpandEventListener(item_new)
         item_text.parentNode.replaceChild(item_new, item_text);
       }
     });
   });
+}
 
-  const box = document.querySelector('.box.note');
-  const body = document.body;
-  const toggleDimmed = () => {
-    if (box.contains(document.activeElement)) {
-      body.classList.add('dimmed');
+async function toggleCheckTodoEvent(box) {
+  const parentElement = box.parentElement;
+  console.log('clicked box');
+  if (parentElement) {
+    const todo_text = parentElement.querySelector(".todo-item-text");
+    if (todo_text.classList.contains("done")) {
+      box.innerText = '[ ]';
+      todo_text.classList.remove("done");
     } else {
-      body.classList.remove('dimmed');
+      box.innerText = '[x]'
+      todo_text.classList.add("done");
     }
-  };
 
-  document.querySelectorAll(".text").forEach((focused) => {
-    focused.addEventListener("focus", () => {
-      focused.style.opacity = 0;
-      setTimeout(() => focused.style.opacity = 1);
-      alert("focused");
-    });
-  });
+    console.log("Parent element removed successfully.");
+    await saveContent();
+  } else {
+    console.error("Parent element not found.");
+    alert("Unable to delete the item. Parent element not found.");
+  }
+}
 
-  document.addEventListener('focusin', toggleDimmed);
-  document.addEventListener('focusout', toggleDimmed);
-
-  toggleDimmed();
-});
-
-async function fetchTodayDate() {
+async function setDateToToday() {
   const dateEl = document.querySelector(".date");
 
   try {
     const todayDate = await invoke("get_today_date");
+    setDayOfWeek(todayDate);
     dateEl.textContent = todayDate;
     await invoke("load_content", { filename: todayDate });
   } catch (error) {
@@ -133,11 +150,20 @@ async function fetchTodayDate() {
   }
 }
 
+async function setDayOfWeek(dateString) {
+  const dayOfWeekEl = document.querySelector("#dayOfWeek");
+  let date = new Date(dateString);
+  const weekday = date.toLocaleDateString('en-US', { weekday: 'short' });
+
+  dayOfWeekEl.textContent = weekday;
+}
+
 async function changeDate(currentDate, direction) {
   const dateEl = document.querySelector(".date");
   try {
     const date = await invoke("change_current_date", { date: currentDate, direction: direction });
     dateEl.textContent = date;
+    await setDayOfWeek(date);
   } catch (error) {
     console.error("Error invoking get_today_date command:", error);
     dateEl.textContent = "Failed to fetch date.";
@@ -145,18 +171,31 @@ async function changeDate(currentDate, direction) {
 }
 
 async function saveContent() {
-
   let filename = document.querySelector(".date").textContent.trim();
 
   if (!filename.toLowerCase().endsWith('.json')) {
     filename += '.json';
   }
 
+  const jsonString = stringifySaveFileContent();
+  console.log(jsonString);
+  try {
+    const result = await invoke("save_content", { filename: filename, content: jsonString });
+    return result;
+  } catch (error) {
+    console.error("Error saving content:", error);
+    alert("An unexpected error occurred while saving content.");
+    throw error;
+  }
+}
+
+function stringifySaveFileContent() {
   let i = 0;
   let todo_items_content = {};
   document.querySelectorAll("li.todo-item-text").forEach((todo_item_content) => {
+    console.log("saving");
     console.log(todo_item_content.textContent);
-    todo_items_content[i] = todo_item_content.textContent;
+    todo_items_content[i] = { "content": todo_item_content.textContent, "done": todo_item_content.classList.contains("done") ? true : false, "expand": todo_item_content.classList.contains("expand") ? true : false };
     i++;
   });
 
@@ -170,15 +209,7 @@ async function saveContent() {
 
   let jsonString = JSON.stringify(jsonArray, null, 2).toString();
 
-  console.log(jsonString);
-  try {
-    const result = await invoke("save_content", { filename: filename, content: jsonString });
-    return result;
-  } catch (error) {
-    console.error("Error saving content:", error);
-    alert("An unexpected error occurred while saving content.");
-    throw error;
-  }
+  return jsonString;
 }
 
 async function loadContent(first = false) {
@@ -204,7 +235,6 @@ async function loadContent(first = false) {
     filename = filenameElement.textContent.trim();
   }
 
-
   if (!filename.toLowerCase().endsWith('.json')) {
     filename += '.json';
   }
@@ -226,82 +256,48 @@ async function loadContent(first = false) {
       return;
     }
 
-    console.log("content");
-    let contentJson;
-    try {
-      contentJson = JSON.parse(content);
-    } catch (parseError) {
-      console.error("Failed to parse JSON:", parseError);
-      alert("Failed to parse JSON content.");
-      return;
-    }
-
-    console.log(contentJson.todo);
-    const todo_list = document.getElementById("todo-list");
-    const note = document.querySelector("#text-note");
-
-    if (todo_list && note) {
-      console.log(contentJson.todo);
-      Object.entries(contentJson.todo).forEach(([key, todoText]) => {
-        createTodoListItem(todo_list, key, todoText);
-      });
-
-      note.value = contentJson.note || "";
-    } else {
-      console.error("Todo or Note elements not found.");
-      alert("Todo or Note elements not found.");
-    }
+    await parseLoadedFileContent(content);
   } catch (error) {
     console.error("Error invoking load_content:", error);
     alert("An unexpected error occurred while loading content.");
   }
 }
 
-function createTodoListItem(todo_list, key, todoText = "") {
-  let todo_item = document.createElement('div');
-  todo_item.classList.add("todo-item");
-  todo_item.id = `todo-item-${key}`;
-
-  let box = document.createElement('label');
-  box.innerText = '[ ]';
-  box.id = `box-todo-item-${key}`;
-  box.classList.add("box-todo-item");
-
-  box.addEventListener("click", async (e) => {
-    e.preventDefault();
-    const parentElement = box.parentElement;
-    console.log('clicked box');
-
-    if (parentElement) {
-      parentElement.remove();
-      console.log("Parent element removed successfully.");
-
-      await saveContent(); // If using async function and saveContent is defined
-    } else {
-      console.error("Parent element not found.");
-      alert("Unable to delete the item. Parent element not found.");
-    }
-  });
-
-  todo_item.appendChild(box);
-
-  let type = todoText.length > 0 ? 'li' : 'input';
-  let todo_item_text = document.createElement(type);
-  todo_item_text.classList.add("todo-item-text");
-    todo_item_text.addEventListener("focus", () => {
-      todo_item_text.style.opacity = 0;
-      setTimeout(() => todo_item_text.style.opacity = 1);
-      alert("focused");
-    });
-
-  if (todoText.length > 0) {
-    todo_item_text.innerText = todoText;
+async function parseLoadedFileContent(content) {
+  console.log("parse content");
+  let contentJson;
+  try {
+    contentJson = JSON.parse(content);
+  } catch (parseError) {
+    console.error("Failed to parse JSON:", parseError);
+    alert("Failed to parse JSON content.");
+    return;
   }
 
-  todo_item.appendChild(todo_item_text);
-  todo_list.appendChild(todo_item);
+  console.log(contentJson.todo);
+  const todo_list = document.getElementById("todo-list");
+  const note = document.querySelector("#text-note");
 
-  console.log(`Added todo item ${key}: ${todoText}`);
+  if (todo_list && note) {
+    console.log(contentJson.todo);
+    Object.entries(contentJson.todo).forEach(async ([key, todo]) => {
+      await loadTodoListItem(todo_list, key, todo.content, todo.done, todo.expand);
+    });
+
+    note.value = contentJson.note || "";
+  } else {
+    console.error("Todo or Note elements not found.");
+    alert("Todo or Note elements not found.");
+  }
+}
+
+async function loadTodoListItem(todo_list, todo_count, content = "", done = false, expand = false) {
+  if (content.length == 0) {
+    return;
+  }
+
+  await createTodo(todo_list, todo_count, 'li', content, done, expand);
+  return "yes"
 }
 
 async function addTodo() {
@@ -319,53 +315,89 @@ async function addTodo() {
     return "yes";
   }
 
+  return createTodo(todo_list, todo_count, 'input');
+}
+
+async function addExpandEventListener(todo_item_text) {
+  todo_item_text.addEventListener('click', async (e) => {
+    e.preventDefault();
+    console.log("clik");
+    if (!todo_item_text.classList.contains("expand")) {
+      todo_item_text.classList.add("expand");
+      todo_item_text.parentElement.classList.add("expand");
+      todo_item_text.scrollIntoView();
+    } else {
+      todo_item_text.classList.remove("expand");
+      todo_item_text.parentElement.classList.remove("expand");
+    }
+    await saveContent();
+  });
+}
+
+
+async function createTodo(todo_list, todo_count, type = 'li', content = "", done = false, expand = false) {
   let todo_item = document.createElement('div');
   todo_item.classList.add("todo-item");
   todo_item.id = `todo-item-${todo_count}`
-
-  let box = document.createElement('label');
-  box.innerText = '[ ]';
-  box.id = `box-todo-item-${todo_count}`;
-  box.classList.add("box-todo-item");
-
-  box.addEventListener("click", async (e) => {
-    e.preventDefault();
-    const parentElement = box.parentElement;
-    console.log('clicked box');
-
-    if (parentElement) {
-      parentElement.remove();
-      console.log("Parent element removed successfully.");
-
-      await saveContent(); // If using async function and saveContent is defined
-    } else {
-      console.error("Parent element not found.");
-      alert("Unable to delete the item. Parent element not found.");
-    }
-  });
-
+  const box = await createCheckBox(todo_count, done);
   todo_item.appendChild(box);
-  let todo_item_text = document.createElement('input');
-  todo_item_text.classList.add("todo-item-text");
-    todo_item_text.addEventListener("focus", () => {
-      todo_item_text.style.opacity = 0;
-      setTimeout(() => todo_item_text.style.opacity = 1);
-      alert("focused");
-    });
-  todo_item_text.addEventListener('keypress', async (e) => {
-    if (e.key === 'Enter') {
-      let item_new = document.createElement('li');
-      item_new.id = todo_item_text.id
-      item_new.innerText = todo_item_text.value;
-      item_new.classList = todo_item_text.classList;
-      todo_item_text.parentNode.replaceChild(item_new, todo_item_text);
-    }
+
+  let todo_item_text = document.createElement(type);
+  if (done) {
+    todo_item_text.classList.add("todo-item-text", "done");
+  } else {
+    todo_item_text.classList.add("todo-item-text");
+  }
+  todo_item_text.addEventListener("focus", () => {
+    todo_item_text.style.opacity = 0;
+    setTimeout(() => todo_item_text.style.opacity = 1);
   });
+
+  if (expand) {
+    todo_item_text.classList.add("expand");
+    todo_item.classList.add("expand");
+  }
+
+  if (type == 'input') {
+    todo_item_text.addEventListener('keypress', async (e) => {
+      if (e.key === 'Enter') {
+        let item_new = document.createElement('li');
+        item_new.id = todo_item_text.id
+        item_new.innerText = todo_item_text.value;
+        item_new.classList = todo_item_text.classList;
+        await addExpandEventListener(item_new);
+        todo_item_text.parentNode.replaceChild(item_new, todo_item_text);
+      }
+    });
+  } else {
+    await addExpandEventListener(todo_item_text);
+  }
+
+  if (content.length > 0 && type == 'li') {
+    todo_item_text.innerText = content;
+  }
 
   todo_item.appendChild(todo_item_text);
-
   todo_list.appendChild(todo_item);
   todo_item.scrollIntoView();
   todo_item_text.focus();
+
   return "yes";
+}
+
+async function createCheckBox(todo_count, done = false) {
+  let box = document.createElement('label');
+  console.log(done);
+  box.innerText = done ? '[x]' : '[ ]';
+  box.id = `box-todo-item-${todo_count}`;
+  box.classList.add("box-todo-item");
+  box.addEventListener("click", async (e) => {
+    e.preventDefault();
+    await toggleCheckTodoEvent(box);
+  });
+  return box;
+}
+
+async function toggleCalendar() {
+  let calendar = document.querySelector("#calendar");
 }
