@@ -15,9 +15,9 @@
 		67E250B037E09A045D27566E /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6F4B8D526EFDDF81CF461C /* MetalKit.framework */; };
 		819B9914321A3CBFEE02E62C /* libapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC25C58C49F9877DB72B52D /* libapp.a */; };
 		84854F4300E3426594C01E35 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198025D14C965F7689B50CBB /* QuartzCore.framework */; };
+		8A6B6FBE7C20D94ACCEC9A7A /* libapp.a in Resources */ = {isa = PBXBuildFile; fileRef = 2042CAF5CE9425A541E22E37 /* libapp.a */; };
 		967137893D767FC2F7F046C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6AE75E0B038D77679E0216 /* Assets.xcassets */; };
 		9AC4948A51B17AE8CBDC06DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0EBCBC414219AFE5E60BA91 /* LaunchScreen.storyboard */; };
-		B4CD0C21C2B40D1455B85284 /* libapp.a in Resources */ = {isa = PBXBuildFile; fileRef = 2F062F5BA414C0614E662DE2 /* libapp.a */; };
 		F9B55F835269342844FE2AC7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F352CF9C4A6CF126D997F6D /* WebKit.framework */; };
 		FFDC96F0A760F036A8DCA808 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D9F35702AD4536421AAC62 /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -28,8 +28,8 @@
 		0FE17A1F4EC4D7957D3401B2 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
 		198025D14C965F7689B50CBB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		19B76E3C32CFFE7CE952A927 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2042CAF5CE9425A541E22E37 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
 		28D9F35702AD4536421AAC62 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		2F062F5BA414C0614E662DE2 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
 		64B29F2A3837958665697A06 /* main.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.rs; sourceTree = "<group>"; };
 		7F352CF9C4A6CF126D997F6D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		93E464EFFD93F85F0E793BE2 /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
@@ -95,14 +95,6 @@
 			path = wispr;
 			sourceTree = "<group>";
 		};
-		660524FED177A9D5D61471B0 /* release */ = {
-			isa = PBXGroup;
-			children = (
-				2F062F5BA414C0614E662DE2 /* libapp.a */,
-			);
-			path = release;
-			sourceTree = "<group>";
-		};
 		6BE613F0765E03BD59A478DA = {
 			isa = PBXGroup;
 			children = (
@@ -131,9 +123,17 @@
 		820D5386610A05CE2F5C50E6 /* arm64 */ = {
 			isa = PBXGroup;
 			children = (
-				660524FED177A9D5D61471B0 /* release */,
+				8D4B581E2095FEBA79D3764D /* debug */,
 			);
 			path = arm64;
+			sourceTree = "<group>";
+		};
+		8D4B581E2095FEBA79D3764D /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				2042CAF5CE9425A541E22E37 /* libapp.a */,
+			);
+			path = debug;
 			sourceTree = "<group>";
 		};
 		9CE0A529AF55A96F5B52928B /* Sources */ = {
@@ -224,7 +224,7 @@
 				967137893D767FC2F7F046C3 /* Assets.xcassets in Resources */,
 				9AC4948A51B17AE8CBDC06DC /* LaunchScreen.storyboard in Resources */,
 				414AD4C2775F844448FBCD7A /* assets in Resources */,
-				B4CD0C21C2B40D1455B85284 /* libapp.a in Resources */,
+				8A6B6FBE7C20D94ACCEC9A7A /* libapp.a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,11 +277,9 @@
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wispr_iOS/wispr_iOS.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: fais649@icloud.com (2B87AZ54JQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: fais649@icloud.com (2B87AZ54JQ)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28PK8QN487;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 28PK8QN487;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "arm64-sim x86_64";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -317,8 +315,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wisp-r.app;
 				PRODUCT_NAME = wispr;
-				PROVISIONING_PROFILE_SPECIFIER = "4b35bc9b-2a16-42fd-8f31-6f576030d992";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "4b35bc9b-2a16-42fd-8f31-6f576030d992";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64  arm64-sim";
@@ -454,11 +450,9 @@
 				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wispr_iOS/wispr_iOS.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: fais649@icloud.com (2B87AZ54JQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development: fais649@icloud.com (2B87AZ54JQ)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28PK8QN487;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 28PK8QN487;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "arm64-sim x86_64";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -494,8 +488,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wisp-r.app;
 				PRODUCT_NAME = wispr;
-				PROVISIONING_PROFILE_SPECIFIER = "4b35bc9b-2a16-42fd-8f31-6f576030d992";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "4b35bc9b-2a16-42fd-8f31-6f576030d992";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64  arm64-sim";

@@ -1,9 +1,59 @@
 const invoke = window.__TAURI__.core.invoke;
 
+const themes = [
+  {
+    background: '#000',
+    foreground: '#ddd'
+  },
+  {
+    background: '#d7d7d7',
+    foreground: '#000'
+  },
+  {
+    background: '#1c2021',
+    foreground: '#f9f5d7'
+  },
+  {
+    background: '#f9f5d7',
+    foreground: '#1c2021'
+  },
+  {
+    background: '#d0d5e3',
+    foreground: '#3860bf'
+  },
+  {
+    background: '#3860bf',
+    foreground: '#d0d5e3'
+  },
+  {
+    background: '#f3f2fc',
+    foreground: '#c590eb'
+  },
+  {
+    background: '#c590eb',
+    foreground: '#f3f2fc'
+  },
+  {
+    background: '#fcf2ea',
+    foreground: '#5b557e'
+  },
+  {
+    background: '#29243b',
+    foreground: '#dedcf4'
+  }
+];
+
+let currentIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
+
+
 window.addEventListener("DOMContentLoaded", () => {
   setDateToToday();
   loadContent(true);
+  let currentIndex = parseInt(localStorage.getItem('themeIndex')) || 0;
 
+  // Apply the saved theme on page load
+  applyTheme(currentIndex);
+  setupLogoEvents();
   setupDatePickerEvents();
   setupSaveEvents();
   setupTodoBoxEvents();
@@ -15,6 +65,21 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function setupLogoEvents() {
+  let logo = document.querySelector("#logo");
+  logo.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % themes.length;
+    applyTheme(currentIndex);
+    localStorage.setItem('themeIndex', currentIndex);
+  });
+}
+
+function applyTheme(index) {
+  const root = document.documentElement;
+  root.style.setProperty('--background-color-main', themes[index].background);
+  root.style.setProperty('--foreground-color-main', themes[index].foreground);
+}
 
 function setupDatePickerEvents() {
   document.querySelector(".tomorrow").addEventListener("click", async (e) => {
@@ -59,7 +124,7 @@ function setupDatePickerEvents() {
 }
 
 function setupSaveEvents() {
-  document.querySelector(".save").addEventListener("click", async (e) => {
+  document.querySelector("#save-btn").addEventListener("click", async (e) => {
     e.preventDefault();
     try {
       const result = await saveContent();
@@ -77,7 +142,7 @@ function setupSaveEvents() {
 
 
 function setupTodoBoxEvents() {
-  document.querySelector(".add-todo").addEventListener("click", async (e) => {
+  document.querySelector("#add-todo-btn").addEventListener("click", async (e) => {
     e.preventDefault();
     try {
       const result = await addTodo();
@@ -200,7 +265,7 @@ function stringifySaveFileContent() {
   });
 
   let todo = todo_items_content;
-  let note = document.querySelector("#text-note");
+  let note = document.querySelector("#note-textarea");
 
   let jsonArray = {
     "todo": todo,
@@ -244,7 +309,7 @@ async function loadContent(first = false) {
 
     if (!content) {
       console.log("no content");
-      const note = document.querySelector("#text-note");
+      const note = document.querySelector("#note-textarea");
 
       if (todo && note) {
         todo.innerHTML = "";
@@ -276,7 +341,7 @@ async function parseLoadedFileContent(content) {
 
   console.log(contentJson.todo);
   const todo_list = document.getElementById("todo-list");
-  const note = document.querySelector("#text-note");
+  const note = document.querySelector("#note-textarea");
 
   if (todo_list && note) {
     console.log(contentJson.todo);
@@ -351,6 +416,8 @@ async function createTodo(todo_list, todo_count, type = 'li', content = "", done
   todo_item_text.addEventListener("focus", () => {
     todo_item_text.style.opacity = 0;
     setTimeout(() => todo_item_text.style.opacity = 1);
+    todo_item.style.opacity = 0;
+    setTimeout(() => todo_item.style.opacity = 1);
   });
 
   if (expand) {
