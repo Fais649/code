@@ -65,9 +65,9 @@
   --width-window-min: 230px;
   --width-ui-max: 800px;
 
-  --width-box: 300px;
-  --height-box: 250px;
-  --height-box-header: 80px;
+  --width-box: 320px;
+  --height-box: 340px;
+  --height-box-header: 100px;
   --padding-box-header: 10px;
 
   --width-topbar-min: var(--width-box);
@@ -81,13 +81,27 @@
   --padding-container-bottom: 20px;
 }
 
+
 body {
   overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* CSS */
+.selectable {
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  user-select: all;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   height: 100%;
   width: 100%;
   padding-bottom: var(--padding-container-bottom);
@@ -119,52 +133,16 @@ body {
   margin: 20px;
 }
 
-@media (max-width: 1080px) and (max-height: 900px) {
-  .content {
-    flex-direction: column;
-  }
-
-  .box:focus-within {
-    position: fixed;
-    box-shadow: 0px 0px var(--foreground-color-main);
-    transform: scale(1.4);
-  }
-
-  #note-wrapper .box:focus-within {
-    translate: 0 -90%;
-    transition: all 0.18s ease-out;
-  }
-
-  #todo-wrapper .box:focus-within {
-    translate: 0 10%;
-    transition: all 0.18s ease-out;
-  }
-
-  .box-wrapper:has(.box:focus-within) {
-    border-style: none;
-    box-shadow: none;
-    z-index: 1;
-  }
-
+.box-wrapper.note,
+.box.note {
+  width: var(--width-box);
+  height: 400px;
 }
 
-@media (max-width: 1080px) {
-  .content {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .box:focus-within {
-    position: fixed;
-    transform: scale(1.4);
-    transition: all 0.18s ease-out;
-    box-shadow: 0px 0px;
-  }
-
-  .box-wrapper:has(.box:focus-within) {
-    border-style: none;
-    box-shadow: none;
-  }
+.box-wrapper.todo,
+.box.todo {
+  width: var(--width-box);
+  height: 300px;
 }
 
 .topbar {
@@ -255,6 +233,13 @@ body {
   color: var(--foreground-color-main);
 }
 
+.icon-xs {
+  font-family: "GohuFont uni11 Nerd Font Mono";
+  font-size: 100%;
+  max-width: 30px;
+  border: none;
+}
+
 .btn:has(.icon-large) {
   width: 37px;
   border-width: 3px;
@@ -270,7 +255,6 @@ body {
   border-radius: 25px;
   border-style: dotted;
 }
-
 
 .box {
   display: flex;
@@ -399,7 +383,6 @@ body {
   max-height: fit-content;
 }
 
-
 input.todo-item-text {
   font-family: "GohuFont uni11 Nerd Font Mono";
   border: 1px solid var(--foreground-color-main);
@@ -416,6 +399,71 @@ input.todo-item-text {
 
 .box-todo-item {
   text-wrap: nowrap;
-  margin-left: 20px;
+  margin-left: 30px;
   margin-right: 5px;
+}
+
+@media (max-width: 1080px) {
+  .content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .box:focus-within {
+    position: fixed;
+    transform: scale(1.4);
+    transition: all 0.18s ease-out;
+    box-shadow: 0px 0px;
+  }
+
+  .box-wrapper:has(.box:focus-within) {
+    border-style: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 1080px) and (max-height: 900px) {
+
+  :root {
+    --width-box: 300px;
+  }
+
+  .box-wrapper.note,
+  .box.note {
+    width: var(--width-box);
+    height: 350;
+  }
+
+  .box-wrapper.todo,
+  .box.todo {
+    width: var(--width-box);
+    height: 250px;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .box:focus-within {
+    position: fixed;
+    box-shadow: 0px 0px var(--foreground-color-main);
+    transform: scale(1.2);
+  }
+
+  #note-wrapper .box:focus-within {
+    translate: 0 -70%;
+    transition: all 0.18s ease-out;
+  }
+
+  #todo-wrapper .box:focus-within {
+    translate: 0 10%;
+    transition: all 0.18s ease-out;
+  }
+
+  .box-wrapper:has(.box:focus-within) {
+    border-style: none;
+    box-shadow: none;
+    z-index: 1;
+  }
+
 }
