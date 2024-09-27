@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, maximum-scale=1.0" />
+  <title>Tauri App</title>
+  <script type="module" src="/main.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div id="logo" class="logo"><span class="icon-xl">wut</span></div>
+      <div class="datepicker">
+        <button class="yesterday clickable"><span class="icon-small">y</span></button>
+        <button class="dayOfWeek clickable" id="dayOfWeek"><span class="icon-small">day</span></button>
+        <button class="dateSeperator btn"><span class="icon-small">::</span></button>
+        <button class="date clickable btn" id="date"><span class=" icon-small">day</span></button>
+        <button class="tomorrow clickable btn"><span class="icon-small">t</span></button>
+      </div>
+      <button id="save-btn" class="btn clickable"><span class="icon-large">s</span></button>
+    </div>
+
+    <div class="content">
+
+      <div id="todo-wrapper" class="box-wrapper todo">
+        <div class="box todo">
+          <div class="box-header">
+            <div class="title">todo;</div>
+            <button id="add-todo-btn" class="btn clickable">
+              <span class="icon-medium"></span>
+            </button>
+          </div>
+          <div name="todo" class="todo-list" id="todo-list">
+          </div>
+        </div>
+      </div>
+
+      <div id="note-wrapper" class="box-wrapper note">
+        <div class="box note">
+          <div class="box-header">
+            <div class="note-header">notes;</div>
+          </div>
+          <textarea name="note" class="text selectable" id="note-textarea"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>

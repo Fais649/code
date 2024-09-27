@@ -1,0 +1,10 @@
+{
+  "appId": "com.wispr.app",
+  "appName": "wispr",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}
