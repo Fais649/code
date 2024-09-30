@@ -2,7 +2,11 @@
   import { invoke } from "@tauri-apps/api/core";
   import "../app.css";
   import DatePicker from "$lib/components/DatePicker.svelte";
+  import MenuBar from "$lib/components/MenuBar.svelte";
+  import TextBox from "$lib/components/TextBox.svelte";
 
+  import { getCurrentWindow } from "@tauri-apps/api/window";
+  getCurrentWindow().startDragging();
   let name = "";
   let greetMsg = "";
 
@@ -12,20 +16,17 @@
   }
 </script>
 
-<div class="dark bg-black container">
+<div class="dark container">
   <div class="flex flex-col w-full h-full">
     <div class="flex w-full items-center justify-center">
       <div class="p-5 justify-center">
+        <MenuBar />
         <DatePicker />
       </div>
     </div>
     <div class="flex flex-col w-full justify-center items-center">
-      <textarea
-        class="h-80 dark bg-black aspect-square m-3 resize-none border-white border-2"
-      ></textarea>
-      <textarea
-        class="h-80 dark bg-black aspect-square m-3 resize-none border-white border-2"
-      ></textarea>
+      <TextBox />
+      <TextBox />
     </div>
   </div>
 </div>

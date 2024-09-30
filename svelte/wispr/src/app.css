@@ -2,7 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-
 @layer base {
   @font-face {
     font-family: GohuFont;
@@ -36,7 +35,7 @@
   }
 
   .dark {
-    --background: 800 0% 0%;
+    --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
