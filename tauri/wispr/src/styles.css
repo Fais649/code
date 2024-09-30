@@ -1,439 +1,471 @@
 @font-face {
-  font-family: 'GohuFont uni11 Nerd Font Mono';
-  src: url('assets/gohufont_11.ttf');
+	font-family: 'GohuFont uni11 Nerd Font Mono';
+	src: url('assets/gohufont_11.ttf');
 }
 
 :root {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 200;
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 200;
 
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 
-  background-color: var(--background-color-main) !important;
-  color: var(--foreground-color-main);
+	background-color: var(--background-color-main) !important;
+	color: var(--foreground-color-main);
 
-  /*DEFAULT THEME*/
-  --background-color-main: #000;
-  --foreground-color-main: #ddd;
+	/*DEFAULT THEME*/
+	--background-color-main: #000;
+	--foreground-color-main: #ddd;
 
-  --border-radius-button: 20px;
-  --border-radius-box: 2px;
+	--border-radius-button: 20px;
+	--border-radius-box: 2px;
 
-  --width-window-min: 230px;
-  --width-ui-max: 800px;
+	--width-window-min: 230px;
+	--width-ui-max: 800px;
 
-  --width-box: 320px;
-  --height-box: 340px;
-  --height-box-header: 100px;
-  --padding-box-header: 10px;
+	--width-box: 340px;
+	--height-box: 340px;
+	--height-box-header: 60px;
+	--padding-box-header: 10px;
 
-  --width-topbar-min: var(--width-box);
-  --width-topbar-max: var(--width-ui-max);
-  --height-topbar: 50px;
+	--width-topbar-min: var(--width-box);
+	--width-topbar-max: var(--width-ui-max);
+	--height-topbar: 40px;
+	--height-botbar: 100px;
 
-  --size-logo: 30px;
-  --width-logo: var(--height-topbar);
-  --padding-logo-top: 15px;
-  --padding-container-bottom: var(--height-topbar);
-  --padding-container-bottom: 20px;
+	--size-logo: 30px;
+	--width-logo: var(--height-topbar);
+	--padding-logo-top: 15px;
+	--padding-container-bottom: var(--height-topbar);
+	--padding-container-bottom: 20px;
 }
 
+html,
 body {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  overflow: hidden;
-  height: 100%;
+	-webkit-overflow-scrolling: touch !important;
+	overflow: hidden !important;
+	touch-action: none;
 }
 
 /* CSS */
 .selectable {
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
-  user-select: auto;
+	-webkit-user-select: auto;
+	-moz-user-select: auto;
+	-ms-user-select: auto;
+	user-select: auto;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-bottom: var(--padding-container-bottom);
-  padding-top: var(--padding-container-top);
-  background-color: var(--background-color-main);
-  color: var(--foreground-color-main);
-  align-items: center;
-  overflow: hidden;
-  height: 100%;
+	display: flex;
+	position: fixed;
+	flex-direction: column;
+	padding-bottom: var(--padding-container-bottom);
+	padding-top: var(--padding-container-top);
+	background-color: var(--background-color-main);
+	color: var(--foreground-color-main);
+	align-items: center;
+	overflow: hidden;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	left: 0;
 }
 
 .row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
-  max-width: var(--width-ui-max);
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0;
+	display: flex;
+	flex-direction: row;
+	max-width: var(--width-ui-max);
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 0;
 }
 
 .box-wrapper {
-  margin: 20px;
-  margin-top: 10px;
+	margin: 20px;
+	margin-top: 5px;
 }
 
 .box-wrapper.note,
 .box.note {
-  width: var(--width-box);
-  height: 400px;
+	width: var(--width-box);
+	height: 400px;
 }
 
 .box-wrapper.todo,
 .box.todo {
-  width: var(--width-box);
-  height: 300px;
+	width: var(--width-box);
+	height: 300px;
 }
 
 .topbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: var(--width-topbar-max);
-  min-width: var(--width-topbar-min);
-  height: var(--height-topbar);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	left: 0;
+	max-width: var(--width-topbar-max);
+	min-width: var(--width-topbar-min);
+	height: var(--height-topbar);
+}
+
+.botbar {
+	position: fixed;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-end;
+	bottom: 0;
+	flex-direction: row;
+	margin: 0;
+	padding: 0;
+	height: var(--height-botbar);
+	width: 100%;
+	left: 0;
 }
 
 .logo {
-  margin-left: 20px;
-  align-self: flex-end;
-  font-size: var(--size-logo);
+	align-self: center;
+	font-size: var(--size-logo);
 }
 
 .datepicker {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0;
+	width: 100%;
 }
 
-.dayOfWeek {
-  width: 40px;
+.date {
+	border: none;
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	font-size: 15px;
+	font-weight: 800;
 }
 
 .dayOfWeek,
 .dateSeperator,
 .yesterday,
-.date,
 .tomorrow {
-  padding-left: 5px;
-  padding-right: 5px;
-  border: none;
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  font-size: 15px;
+	border: none;
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	font-size: 15px;
+	font-weight: 800;
+	border: none;
+}
+
+.dayOfWeek {
+	text-align: center;
+	margin-left: 10px;
 }
 
 .clickable {
-  background-color: var(--background-color-main);
-  color: var(--foreground-color-main);
+	background-color: var(--background-color-main);
+	color: var(--foreground-color-main);
 }
 
 .clickable:active {
-  background-color: var(--foreground-color-main);
-  color: var(--background-color-main);
+	background-color: var(--foreground-color-main);
+	color: var(--background-color-main);
 }
 
 .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--background-color-main);
-  color: var(--foreground-color-main);
-  border-color: var(--foreground-color-main);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--background-color-main);
+	color: var(--foreground-color-main);
+	border-color: var(--foreground-color-main);
+	border: none !important;
 }
 
-#save-btn {
-  margin-right: 20px;
-}
 
 .icon-xl {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  font-size: 50px;
-  color: var(--foreground-color-main);
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	font-size: 50px;
+	color: var(--foreground-color-main);
 }
 
 .icon-large {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  font-size: 25px;
-  color: var(--foreground-color-main);
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	font-size: 25px;
+	color: var(--foreground-color-main);
 }
 
 .icon-medium {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  font-size: 150%;
-  color: var(--foreground-color-main);
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	font-size: 150%;
+	color: var(--foreground-color-main);
 }
 
 .icon-small {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  font-size: 100%;
-  color: var(--foreground-color-main);
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	font-size: 100%;
+	color: var(--foreground-color-main);
 }
 
 .icon-xs {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  font-size: 100%;
-  max-width: 30px;
-  border: none;
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	font-size: 100%;
+	max-width: 30px;
+	border: none;
 }
 
 .btn:has(.icon-large) {
-  width: 37px;
-  border-width: 3px;
-  border-width: 2px;
-  border-radius: 25px;
-  border-style: dotted;
+	width: 37px;
+	border-width: 3px;
+	border-width: 2px;
+	border-radius: 25px;
+	border-style: dotted;
 }
 
 .btn:has(.icon-medium) {
-  width: 25px;
-  height: 25px;
-  border-width: 2px;
-  border-radius: 25px;
-  border-style: dotted;
+	width: 25px;
+	height: 25px;
+	border-width: 2px;
+	border-radius: 25px;
+	border-style: dotted;
 }
 
 .box {
-  display: flex;
-  flex-direction: column;
-  height: var(--height-box);
-  width: var(--width-box);
-  border-style: dashed;
-  border-left-style: solid;
-  border-bottom-style: solid;
-  border-width: 2px;
-  background-color: var(--background-color-main);
-  transition: all 0.18s ease-out;
-  box-shadow: -6px 6px;
+	display: flex;
+	flex-direction: column;
+	height: var(--height-box);
+	width: var(--width-box);
+	border-radius: 15px;
+	border-style: dashed;
+	border-left-style: solid;
+	border-bottom-style: solid;
+	border-width: 2px;
+	background-color: var(--background-color-main);
+	transition: all 0.24s ease-out;
+	box-shadow: -6px 6px;
+	overflow: hidden;
 }
 
 .box-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: var(--height-box);
-  width: var(--width-box);
-  transition: all 0.18s ease-out;
+	display: flex;
+	flex-direction: column;
+	height: var(--height-box);
+	width: var(--width-box);
+	transition: all 0.24s ease-out;
 }
 
 .box:focus-within {
-  position: fixed;
-  border: var(--border-radius-box) solid var(--foreground-color-main);
-  background-color: var(--background-color-main);
-  transform: scale(1.2);
-  box-shadow: 0px 0px;
+	position: fixed;
+	border: var(--border-radius-box) solid var(--foreground-color-main);
+	background-color: var(--background-color-main);
+	transform: scale(1.22);
+	box-shadow: 0px 0px;
 }
 
 .box-wrapper .box:focus-within {
-  position: fixed;
+	position: fixed;
 }
 
 .box-wrapper:has(.box:focus-within) {
-  border-style: none;
-  box-shadow: none;
+	border-style: none;
+	box-shadow: none;
 }
 
 .box-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: var(--height-box-header);
-  width: var(--width-box);
-  padding: 0px 7.5%;
-  font-weight: 600;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: var(--height-box-header);
+	width: var(--width-box);
+	padding: 0px 7.5%;
+	font-weight: 600;
 }
 
 .box-header .title {
-  width: 75%;
+	width: 75%;
 }
 
 .text {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  max-width: var(--width-box);
-  height: 100%;
-  padding: 20px;
-  border: 0px;
-  border-top: 2px dotted var(--foreground-color-main);
-  overflow: scroll;
-  background-color: var(--background-color-main);
-  color: var(--foreground-color-main);
-  resize: none;
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	max-width: var(--width-box);
+	height: 100%;
+	padding: 20px;
+	border: 0px;
+	overflow: scroll;
+	background-color: var(--background-color-main);
+	color: var(--foreground-color-main);
+	resize: none;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .todo-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow: scroll;
-  height: 100%;
-  max-width: 100%;
-  padding: 20px 0px;
-  border-top: 2px dotted var(--foreground-color-main);
-  background-color: var(--background-color-main);
-  color: var(--foreground-color-main);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 100%;
+	max-width: 100%;
+	padding: 20px 0px;
+	background-color: var(--background-color-main);
+	color: var(--foreground-color-main);
 }
 
 .todo-item {
-  display: flex;
-  flex-direction: row;
-  max-width: 100%;
-  min-height: 25px;
-  color: var(--foreground-color-main);
+	display: flex;
+	flex-direction: row;
+	max-width: 100%;
+	min-height: 25px;
+	color: var(--foreground-color-main);
 }
 
 .todo-item-text {
-  background: none;
-  color: var(--foreground-color-main);
-  height: 20px;
-  width: 200px;
-  margin-left: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  list-style-type: none;
-  transition: all 0.18s ease-out;
+	background: none;
+	color: var(--foreground-color-main);
+	height: 20px;
+	width: 200px;
+	margin-left: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	list-style-type: none;
+	transition: all 0.24s ease-out;
 }
 
 .todo-item-text.done {
-  stroke-width: 5px;
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
+	stroke-width: 5px;
+	text-decoration: line-through;
+	text-decoration-thickness: 2px;
 }
 
 .todo-item-text.expand {
-  text-wrap: wrap;
-  word-wrap: break-word;
-  min-height: fit-content;
-  list-style-type: none;
-  max-height: fit-content;
-  border-top: 2px dotted;
-  border-right: 2px dotted;
-  box-shadow: -2px 2px var(--foreground-color-main);
-  padding: 0px 4px;
+	text-wrap: wrap;
+	word-wrap: break-word;
+	min-height: fit-content;
+	list-style-type: none;
+	max-height: fit-content;
+	border-top: 2px dotted;
+	border-right: 2px dotted;
+	box-shadow: -2px 2px var(--foreground-color-main);
+	padding: 0px 4px;
 }
 
 .expand {
-  text-wrap: wrap;
-  word-wrap: break-word;
-  min-height: fit-content;
-  list-style-type: none;
-  max-height: fit-content;
+	text-wrap: wrap;
+	word-wrap: break-word;
+	min-height: fit-content;
+	list-style-type: none;
+	max-height: fit-content;
 }
 
 input.todo-item-text {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  border: 1px solid var(--foreground-color-main);
-  text-justify: center;
-  height: 20px;
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	border: 1px solid var(--foreground-color-main);
+	text-justify: center;
+	height: 20px;
 }
 
 .input:focus {
-  font-family: "GohuFont uni11 Nerd Font Mono";
-  outline: var(--foreground-color-main);
-  border-color: var(--foreground-color-main);
-  box-shadow: inset 0 1px 4px var(--foreground-color-main), 0 0 20px 2px var(--foreground-color-main);
+	font-family: "GohuFont uni11 Nerd Font Mono";
+	outline: var(--foreground-color-main);
+	border-color: var(--foreground-color-main);
+	box-shadow: inset 0 1px 4px var(--foreground-color-main), 0 0 20px 2px var(--foreground-color-main);
 }
 
 .box-todo-item {
-  text-wrap: nowrap;
-  margin-left: 30px;
-  margin-right: 5px;
+	text-wrap: nowrap;
+	margin-left: 30px;
+	margin-right: 5px;
 }
 
 @media (max-width: 1080px) {
-  .content {
-    flex-direction: column;
-    height: auto;
-  }
+	.content {
+		flex-direction: column;
+		height: auto;
+	}
 
-  .box:focus-within {
-    position: fixed;
-    transform: scale(1.4);
-    transition: all 0.18s ease-out;
-    box-shadow: 0px 0px;
-  }
+	.box:focus-within {
+		position: fixed;
+		transition: all 0.24s ease-out;
+		box-shadow: 0px 0px;
+	}
 
-  .box-wrapper:has(.box:focus-within) {
-    border-style: none;
-    box-shadow: none;
-  }
+	.box-wrapper:has(.box:focus-within) {
+		border-style: none;
+		box-shadow: none;
+	}
 }
 
 @media (max-width: 1080px) and (max-height: 900px) {
 
-  :root {
-    --width-box: 300px;
-  }
+	:root {
+		--width-box: 300px;
+	}
 
-  .box-wrapper.note,
-  .box.note {
-    width: var(--width-box);
-    height: 300px;
-  }
 
-  .box-wrapper.todo,
-  .box.todo {
-    width: var(--width-box);
-    height: 240px;
-  }
+	.box-header {
+		height: var(--height-box-header);
+		width: 100%;
+		border-color: var(--foreground-color-main);
+		border-bottom: 2px dotted;
+	}
 
-  .content {
-    flex-direction: column;
-  }
+	.box-wrapper.note,
+	.box.note {
+		width: var(--width-box);
+		height: 38vh;
+	}
 
-  .box:focus-within {
-    position: fixed;
-    box-shadow: 0px 0px var(--foreground-color-main);
-    transform: scale(1.2);
-  }
+	.box-wrapper.todo,
+	.box.todo {
+		width: var(--width-box);
+		height: 35vh;
+	}
 
-  #note-wrapper .box:focus-within {
-    translate: 0 -90%;
-    transition: all 0.18s ease-out;
-  }
+	.content {
+		flex-direction: column;
+	}
 
-  #note-textarea {
-    font-size: 15px;
-  }
+	.box:focus-within {
+		position: fixed;
+		box-shadow: 0px 0px var(--foreground-color-main);
+	}
 
-  #todo-wrapper .box:focus-within {
-    translate: 0 10%;
-    transition: all 0.18s ease-out;
-  }
+	#note-wrapper .box:focus-within {
+		translate: 0 -87.5%;
+		transition: all 0.24s ease-out;
+	}
 
-  .box-wrapper.note:has(.box:focus-within) {
-    overflow: hidden;
-    border-style: none;
-    box-shadow: none;
-    z-index: 1;
-  }
+	#note-textarea {
+		font-size: 15px;
+	}
+
+	#todo-wrapper .box:focus-within {
+		translate: 0 7%;
+		transition: all 0.24s ease-out;
+	}
+
+	.box-wrapper.note:has(.box:focus-within) {
+		overflow: hidden;
+		border-style: none;
+		box-shadow: none;
+		z-index: 1;
+	}
 
 }
