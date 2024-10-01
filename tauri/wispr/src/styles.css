@@ -49,6 +49,8 @@
 html,
 body {
 	-webkit-overflow-scrolling: touch !important;
+	animation: none;
+	-webkit-animation: none;
 	overflow: hidden !important;
 	touch-action: none;
 }
@@ -76,6 +78,7 @@ body {
 	margin: 0;
 	width: 100%;
 	left: 0;
+	touch-action: none;
 }
 
 .row {

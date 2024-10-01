@@ -409,7 +409,6 @@ function toggleTodoInput(todoItemText) {
 		itemNew.style.opacity = 1;
 	}, 0);
 	addTodoInputEvents(itemNew)
-	addExpandEventListener(itemNew)
 	itemNew.focus();
 }
 
@@ -444,6 +443,7 @@ function addSwipeToDeleteEventListeners(todoItem) {
 
 	todoItem.addEventListener('pointermove', function(event) {
 		if (!isDragging) return;
+		event.preventDefault();
 		currentX = event.clientX;
 		let diffX = currentX - startX;
 		todoItem.style.transform = `translateX(${diffX}px)`;
