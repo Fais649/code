@@ -1,0 +1,10 @@
+{
+  "appId": "punk.sys.cspr.app",
+  "appName": "cspr",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  }
+}

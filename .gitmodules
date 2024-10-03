@@ -4,3 +4,12 @@
 [submodule "rust"]
 	path = rust
 	url = https://github.com/Fais649/rust.git
+[submodule "sveltecap"]
+	path = sveltecap
+	url = https://github.com/Fais649/sveltecap.git
+[submodule "tauri"]
+	path = tauri
+	url = https://github.com/Fais649/tauri.git
+[submodule "esp32"]
+	path = esp32
+	url = https://github.com/Fais649/esp32.git
