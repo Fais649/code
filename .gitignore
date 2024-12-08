@@ -1,3 +1,5 @@
 .DS_STORE
 ./go/
 ./go/*
+./swift/shittyV2/
+./swift/shittyV2/*
