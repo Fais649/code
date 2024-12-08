@@ -1,0 +1,5 @@
+2024-12-07 09:53:16.403 wispr[88589:38905808] invalid mode 'kCFRunLoopCommonModes' provided to CFRunLoopRunSpecific - break on _CFRunLoopError_RunCalledWithInvalidMode to debug. This message will only appear once per execution.
+NEW_TODO
+2024-12-07 09:53:25.540 wispr[88589:38905808] Simulator user has requested new graphics quality: 100
+2024-12-07 09:53:26.946 wispr[88589:38905819] Lexicon creation for de failed: Error Domain=com.apple.Lexicon.ErrorDomain Code=0 "Could not determine the location of the base unigrams file, or one was not provided." UserInfo={NSLocalizedDescription=Could not determine the location of the base unigrams file, or one was not provided.}
+punk.systems.wispr: 88589
