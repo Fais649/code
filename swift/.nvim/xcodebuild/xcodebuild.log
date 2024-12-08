@@ -1,0 +1,17 @@
+[!]  --- xcodebuild: Using the first of multiple matching destinations:
+{ platform:iOS Simulator, id:187AF873-4B51-49CE-BA6C-9D4ABE9EDABB, OS:18.0, name:iPhone 16 Pro }
+{ platform:iOS Simulator, id:187AF873-4B51-49CE-BA6C-9D4ABE9EDABB, OS:18.0, name:iPhone 16 Pro }
+[wispr] Compiling ContentView.swift
+[wispr] Copy arm64-apple-ios-simulator.swiftsourceinfo -> wispr.swiftsourceinfo
+[wispr] Copy arm64-apple-ios-simulator.abi.json -> wispr.abi.json
+Signing wispr.debug.dylib (in target 'wispr' from project 'wispr')
+Signing __preview.dylib (in target 'wispr' from project 'wispr')
+Signing wispr.app (in target 'wispr' from project 'wispr')
+Build Succeeded
+
+-----------------------------
+-- xcodebuild.nvim summary --
+-----------------------------
+
+  ✔ Build Succeeded
+
