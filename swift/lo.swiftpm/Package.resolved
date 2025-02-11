@@ -1,0 +1,42 @@
+{
+  "originHash" : "62db76e946d0b6c4475bebe73285469b1b233b6a218e78f5fbf47537d08721b7",
+  "pins" : [
+    {
+      "identity" : "horizoncalendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/HorizonCalendar.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "697c6f22f7e2f6da69fd0ca5dca0d08c973ea3a8"
+      }
+    },
+    {
+      "identity" : "kvkcalendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kvyatkovskys/KVKCalendar",
+      "state" : {
+        "revision" : "fbd59e96585c9131c73f1a192b774c0ed9490f45",
+        "version" : "0.6.29"
+      }
+    },
+    {
+      "identity" : "swift-algorithms",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-algorithms.git",
+      "state" : {
+        "revision" : "f6919dfc309e7f1b56224378b11e28bab5bccc42",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "swift-numerics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-numerics.git",
+      "state" : {
+        "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}

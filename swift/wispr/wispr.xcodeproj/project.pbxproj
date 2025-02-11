@@ -6,223 +6,471 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		08E45829FB8748825105CC2B /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A13C5C3F25F0F3FA6FF17A /* Util.swift */; };
+		361823B322067C06D146BFB6 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A13C5C3F25F0F3FA6FF17A /* Util.swift */; };
+		6CFADDFD14F573DCEA93E0B1 /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44952C8CF97636BAC358E05 /* TimeLine.swift */; };
+		7DB8800CCAC7514D54CDDF8C /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675F733268FCCC5DFD8CFD9C /* Day.swift */; };
+		8B4854B57B7C4C50552CAFE4 /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44952C8CF97636BAC358E05 /* TimeLine.swift */; };
+		8E4F0EB0CD89A0B2EE014BA8 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675F733268FCCC5DFD8CFD9C /* Day.swift */; };
+		8E912B88272EA0CCBD688CC2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A13C5C3F25F0F3FA6FF17A /* Util.swift */; };
+		A2B9ACF32D5B249C0087911B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28D87042D5A83D700421031 /* WidgetKit.framework */; };
+		A2B9ACF42D5B249C0087911B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28D87062D5A83D700421031 /* SwiftUI.framework */; };
+		A2B9AD052D5B249E0087911B /* widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A2B9ACF22D5B249C0087911B /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A2FE05B12D5B96260087AE41 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2FE05B02D5B96260087AE41 /* AudioKit */; };
+		A2FE05B42D5B96350087AE41 /* SwiftWhisper in Frameworks */ = {isa = PBXBuildFile; productRef = A2FE05B32D5B96350087AE41 /* SwiftWhisper */; };
+		A2FE05B72D5B96400087AE41 /* SFSymbolsPicker in Frameworks */ = {isa = PBXBuildFile; productRef = A2FE05B62D5B96400087AE41 /* SFSymbolsPicker */; };
+		A2FE05B92D5B96480087AE41 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = A2FE05B82D5B96480087AE41 /* AudioKit */; };
+		A2FE05BB2D5B96480087AE41 /* SwiftWhisper in Frameworks */ = {isa = PBXBuildFile; productRef = A2FE05BA2D5B96480087AE41 /* SwiftWhisper */; };
+		A2FE05BD2D5B96480087AE41 /* SFSymbolsPicker in Frameworks */ = {isa = PBXBuildFile; productRef = A2FE05BC2D5B96480087AE41 /* SFSymbolsPicker */; };
+		D9A552DB3B3541D1AC321A3D /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44952C8CF97636BAC358E05 /* TimeLine.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
-		A2F669162CF4572100606DF2 /* PBXContainerItemProxy */ = {
+		A2A587992D3120F30000B20D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A2F668FB2CF4572000606DF2 /* Project object */;
+			containerPortal = A2A5877E2D3120F20000B20D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A2F669022CF4572000606DF2;
+			remoteGlobalIDString = A2A587852D3120F20000B20D;
 			remoteInfo = wispr;
 		};
-		A2F669202CF4572100606DF2 /* PBXContainerItemProxy */ = {
+		A2A587A32D3120F30000B20D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A2F668FB2CF4572000606DF2 /* Project object */;
+			containerPortal = A2A5877E2D3120F20000B20D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A2F669022CF4572000606DF2;
+			remoteGlobalIDString = A2A587852D3120F20000B20D;
 			remoteInfo = wispr;
+		};
+		A2B9AD032D5B249E0087911B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2A5877E2D3120F20000B20D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2B9ACF12D5B249C0087911B;
+			remoteInfo = widgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A28D871D2D5A83D900421031 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A2B9AD052D5B249E0087911B /* widgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		A2F669032CF4572000606DF2 /* wispr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wispr.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2F669152CF4572100606DF2 /* wisprTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wisprTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2F6691F2CF4572100606DF2 /* wisprUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wisprUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		107A94E1F61ED6B9E3353F91 /* DayDetail.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DayDetail.swift; sourceTree = "<group>"; };
+		11317E2015F93A11C0FB061C /* Hour.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Hour.swift; sourceTree = "<group>"; };
+		22012776C3CDEFFC1F0D8833 /* Future.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		31DA0596A1365E6B9C7259DD /* Observables.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Observables.swift; sourceTree = "<group>"; };
+		47A9352EC3E6DAF16016F1E6 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		5D257C9EEDD4D4A1A7A613B8 /* NewItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NewItem.swift; sourceTree = "<group>"; };
+		675F733268FCCC5DFD8CFD9C /* Day.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		71A13C5C3F25F0F3FA6FF17A /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		9E9705953FAEE7D4F4B75F65 /* Past.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Past.swift; sourceTree = "<group>"; };
+		A28D87042D5A83D700421031 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A28D87062D5A83D700421031 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A2A587862D3120F20000B20D /* wispr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wispr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A587982D3120F30000B20D /* wisprTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wisprTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A587A22D3120F30000B20D /* wisprUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wisprUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B9ACF22D5B249C0087911B /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2B9AD0A2D5B25190087911B /* widgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widgetExtension.entitlements; sourceTree = "<group>"; };
+		AD7F7ECBCFFA99C65D789F04 /* Quarter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Quarter.swift; sourceTree = "<group>"; };
+		C44952C8CF97636BAC358E05 /* TimeLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
+		E19CC08EF80BFAEF58AD1D07 /* DayBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DayBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A28D86EA2D54070C00421031 /* Exceptions for "wispr" folder in "wisprTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Fonts/GohuFont/COPYING-LICENSE",
+				"Fonts/GohuFont/GohuFont11NerdFont-Regular.ttf",
+				"Fonts/GohuFont/GohuFont11NerdFontMono-Regular.ttf",
+				"Fonts/GohuFont/GohuFont11NerdFontPropo-Regular.ttf",
+				"Fonts/GohuFont/GohuFont14NerdFont-Regular.ttf",
+				"Fonts/GohuFont/GohuFont14NerdFontMono-Regular.ttf",
+				"Fonts/GohuFont/GohuFont14NerdFontPropo-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni11NerdFont-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni11NerdFontMono-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni11NerdFontPropo-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni14NerdFont-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni14NerdFontMono-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni14NerdFontPropo-Regular.ttf",
+				Fonts/GohuFont/README.md,
+				"tiny-encoder.mlmodelc",
+				tiny.bin,
+			);
+			target = A2A587972D3120F30000B20D /* wisprTests */;
+		};
+		A28D86EB2D54070C00421031 /* Exceptions for "wispr" folder in "wisprUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Fonts/GohuFont/COPYING-LICENSE",
+				"Fonts/GohuFont/GohuFont11NerdFont-Regular.ttf",
+				"Fonts/GohuFont/GohuFont11NerdFontMono-Regular.ttf",
+				"Fonts/GohuFont/GohuFont11NerdFontPropo-Regular.ttf",
+				"Fonts/GohuFont/GohuFont14NerdFont-Regular.ttf",
+				"Fonts/GohuFont/GohuFont14NerdFontMono-Regular.ttf",
+				"Fonts/GohuFont/GohuFont14NerdFontPropo-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni11NerdFont-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni11NerdFontMono-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni11NerdFontPropo-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni14NerdFont-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni14NerdFontMono-Regular.ttf",
+				"Fonts/GohuFont/GohuFontuni14NerdFontPropo-Regular.ttf",
+				Fonts/GohuFont/README.md,
+				"tiny-encoder.mlmodelc",
+				tiny.bin,
+			);
+			target = A2A587A12D3120F30000B20D /* wisprUITests */;
+		};
+		A2B9AD092D5B249E0087911B /* Exceptions for "widget" folder in "widgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A2B9ACF12D5B249C0087911B /* widgetExtension */;
+		};
+		A2B9AD122D5B25BC0087911B /* Exceptions for "widget" folder in "wispr" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIntent.swift,
+				widget.swift,
+				widgetControl.swift,
+				widgetLiveActivity.swift,
+			);
+			target = A2A587852D3120F20000B20D /* wispr */;
+		};
+		A2B9AD142D5B26250087911B /* Exceptions for "wispr" folder in "widgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ContentView.swift,
+				Day.swift,
+				"Fonts/GohuFont/GohuFont11NerdFontMono-Regular.ttf",
+				Item.swift,
+				SharedContainer.swift,
+				TimeLine.swift,
+				Util.swift,
+				Widget.swift,
+			);
+			target = A2B9ACF12D5B249C0087911B /* widgetExtension */;
+		};
+		A2EDEF4A2D343476003D9E8D /* Exceptions for "wispr" folder in "wispr" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A2A587852D3120F20000B20D /* wispr */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A2F669052CF4572000606DF2 /* wispr */ = {
+		A2A587882D3120F20000B20D /* wispr */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A2EDEF4A2D343476003D9E8D /* Exceptions for "wispr" folder in "wispr" target */,
+				A28D86EA2D54070C00421031 /* Exceptions for "wispr" folder in "wisprTests" target */,
+				A28D86EB2D54070C00421031 /* Exceptions for "wispr" folder in "wisprUITests" target */,
+				A2B9AD142D5B26250087911B /* Exceptions for "wispr" folder in "widgetExtension" target */,
+			);
 			path = wispr;
 			sourceTree = "<group>";
 		};
-		A2F669182CF4572100606DF2 /* wisprTests */ = {
+		A2A5879B2D3120F30000B20D /* wisprTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = wisprTests;
 			sourceTree = "<group>";
 		};
-		A2F669222CF4572100606DF2 /* wisprUITests */ = {
+		A2A587A52D3120F30000B20D /* wisprUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = wisprUITests;
+			sourceTree = "<group>";
+		};
+		A2B9ACF52D5B249C0087911B /* widget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A2B9AD122D5B25BC0087911B /* Exceptions for "widget" folder in "wispr" target */,
+				A2B9AD092D5B249E0087911B /* Exceptions for "widget" folder in "widgetExtension" target */,
+			);
+			path = widget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A2F669002CF4572000606DF2 /* Frameworks */ = {
+		A2A587832D3120F20000B20D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2FE05B12D5B96260087AE41 /* AudioKit in Frameworks */,
+				A2FE05B72D5B96400087AE41 /* SFSymbolsPicker in Frameworks */,
+				A2FE05B42D5B96350087AE41 /* SwiftWhisper in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A587952D3120F30000B20D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2F669122CF4572100606DF2 /* Frameworks */ = {
+		A2A5879F2D3120F30000B20D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2F6691C2CF4572100606DF2 /* Frameworks */ = {
+		A2B9ACEF2D5B249C0087911B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2FE05B92D5B96480087AE41 /* AudioKit in Frameworks */,
+				A2B9ACF42D5B249C0087911B /* SwiftUI.framework in Frameworks */,
+				A2B9ACF32D5B249C0087911B /* WidgetKit.framework in Frameworks */,
+				A2FE05BB2D5B96480087AE41 /* SwiftWhisper in Frameworks */,
+				A2FE05BD2D5B96480087AE41 /* SFSymbolsPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A2F668FA2CF4572000606DF2 = {
+		A2A5877D2D3120F20000B20D = {
 			isa = PBXGroup;
 			children = (
-				A2F669052CF4572000606DF2 /* wispr */,
-				A2F669182CF4572100606DF2 /* wisprTests */,
-				A2F669222CF4572100606DF2 /* wisprUITests */,
-				A2F669042CF4572000606DF2 /* Products */,
+				A2B9AD0A2D5B25190087911B /* widgetExtension.entitlements */,
+				A2A587882D3120F20000B20D /* wispr */,
+				A2A5879B2D3120F30000B20D /* wisprTests */,
+				A2A587A52D3120F30000B20D /* wisprUITests */,
+				A2B9ACF52D5B249C0087911B /* widget */,
+				A2A587872D3120F20000B20D /* Products */,
+				A2EDEF4B2D34349F003D9E8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		A2F669042CF4572000606DF2 /* Products */ = {
+		A2A587872D3120F20000B20D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2F669032CF4572000606DF2 /* wispr.app */,
-				A2F669152CF4572100606DF2 /* wisprTests.xctest */,
-				A2F6691F2CF4572100606DF2 /* wisprUITests.xctest */,
+				A2A587862D3120F20000B20D /* wispr.app */,
+				A2A587982D3120F30000B20D /* wisprTests.xctest */,
+				A2A587A22D3120F30000B20D /* wisprUITests.xctest */,
+				B2A5784E7289AE4FD46CF9D0 /* wispr */,
+				A2B9ACF22D5B249C0087911B /* widgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A2EDEF4B2D34349F003D9E8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A28D87042D5A83D700421031 /* WidgetKit.framework */,
+				A28D87062D5A83D700421031 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2A5784E7289AE4FD46CF9D0 /* wispr */ = {
+			isa = PBXGroup;
+			children = (
+				675F733268FCCC5DFD8CFD9C /* Day.swift */,
+				11317E2015F93A11C0FB061C /* Hour.swift */,
+				AD7F7ECBCFFA99C65D789F04 /* Quarter.swift */,
+				5D257C9EEDD4D4A1A7A613B8 /* NewItem.swift */,
+				71A13C5C3F25F0F3FA6FF17A /* Util.swift */,
+				22012776C3CDEFFC1F0D8833 /* Future.swift */,
+				9E9705953FAEE7D4F4B75F65 /* Past.swift */,
+				107A94E1F61ED6B9E3353F91 /* DayDetail.swift */,
+				C44952C8CF97636BAC358E05 /* TimeLine.swift */,
+				E19CC08EF80BFAEF58AD1D07 /* DayBox.swift */,
+				31DA0596A1365E6B9C7259DD /* Observables.swift */,
+				47A9352EC3E6DAF16016F1E6 /* Element.swift */,
+			);
+			path = wispr;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A2F669022CF4572000606DF2 /* wispr */ = {
+		A2A587852D3120F20000B20D /* wispr */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2F669292CF4572100606DF2 /* Build configuration list for PBXNativeTarget "wispr" */;
+			buildConfigurationList = A2A587AC2D3120F30000B20D /* Build configuration list for PBXNativeTarget "wispr" */;
 			buildPhases = (
-				A2F668FF2CF4572000606DF2 /* Sources */,
-				A2F669002CF4572000606DF2 /* Frameworks */,
-				A2F669012CF4572000606DF2 /* Resources */,
+				A2A587822D3120F20000B20D /* Sources */,
+				A2A587832D3120F20000B20D /* Frameworks */,
+				A2A587842D3120F20000B20D /* Resources */,
+				A28D871D2D5A83D900421031 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A2B9AD042D5B249E0087911B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A2F669052CF4572000606DF2 /* wispr */,
+				A2A587882D3120F20000B20D /* wispr */,
 			);
 			name = wispr;
 			packageProductDependencies = (
+				A2FE05B02D5B96260087AE41 /* AudioKit */,
+				A2FE05B32D5B96350087AE41 /* SwiftWhisper */,
+				A2FE05B62D5B96400087AE41 /* SFSymbolsPicker */,
 			);
 			productName = wispr;
-			productReference = A2F669032CF4572000606DF2 /* wispr.app */;
+			productReference = A2A587862D3120F20000B20D /* wispr.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A2F669142CF4572100606DF2 /* wisprTests */ = {
+		A2A587972D3120F30000B20D /* wisprTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2F6692C2CF4572100606DF2 /* Build configuration list for PBXNativeTarget "wisprTests" */;
+			buildConfigurationList = A2A587AF2D3120F30000B20D /* Build configuration list for PBXNativeTarget "wisprTests" */;
 			buildPhases = (
-				A2F669112CF4572100606DF2 /* Sources */,
-				A2F669122CF4572100606DF2 /* Frameworks */,
-				A2F669132CF4572100606DF2 /* Resources */,
+				A2A587942D3120F30000B20D /* Sources */,
+				A2A587952D3120F30000B20D /* Frameworks */,
+				A2A587962D3120F30000B20D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A2F669172CF4572100606DF2 /* PBXTargetDependency */,
+				A2A5879A2D3120F30000B20D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A2F669182CF4572100606DF2 /* wisprTests */,
+				A2A5879B2D3120F30000B20D /* wisprTests */,
 			);
 			name = wisprTests;
-			packageProductDependencies = (
-			);
 			productName = wisprTests;
-			productReference = A2F669152CF4572100606DF2 /* wisprTests.xctest */;
+			productReference = A2A587982D3120F30000B20D /* wisprTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A2F6691E2CF4572100606DF2 /* wisprUITests */ = {
+		A2A587A12D3120F30000B20D /* wisprUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2F6692F2CF4572100606DF2 /* Build configuration list for PBXNativeTarget "wisprUITests" */;
+			buildConfigurationList = A2A587B22D3120F30000B20D /* Build configuration list for PBXNativeTarget "wisprUITests" */;
 			buildPhases = (
-				A2F6691B2CF4572100606DF2 /* Sources */,
-				A2F6691C2CF4572100606DF2 /* Frameworks */,
-				A2F6691D2CF4572100606DF2 /* Resources */,
+				A2A5879E2D3120F30000B20D /* Sources */,
+				A2A5879F2D3120F30000B20D /* Frameworks */,
+				A2A587A02D3120F30000B20D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A2F669212CF4572100606DF2 /* PBXTargetDependency */,
+				A2A587A42D3120F30000B20D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A2F669222CF4572100606DF2 /* wisprUITests */,
+				A2A587A52D3120F30000B20D /* wisprUITests */,
 			);
 			name = wisprUITests;
-			packageProductDependencies = (
-			);
 			productName = wisprUITests;
-			productReference = A2F6691F2CF4572100606DF2 /* wisprUITests.xctest */;
+			productReference = A2A587A22D3120F30000B20D /* wisprUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		A2B9ACF12D5B249C0087911B /* widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2B9AD062D5B249E0087911B /* Build configuration list for PBXNativeTarget "widgetExtension" */;
+			buildPhases = (
+				A2B9ACEE2D5B249C0087911B /* Sources */,
+				A2B9ACEF2D5B249C0087911B /* Frameworks */,
+				A2B9ACF02D5B249C0087911B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A2B9ACF52D5B249C0087911B /* widget */,
+			);
+			name = widgetExtension;
+			packageProductDependencies = (
+				A2FE05B82D5B96480087AE41 /* AudioKit */,
+				A2FE05BA2D5B96480087AE41 /* SwiftWhisper */,
+				A2FE05BC2D5B96480087AE41 /* SFSymbolsPicker */,
+			);
+			productName = widgetExtension;
+			productReference = A2B9ACF22D5B249C0087911B /* widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A2F668FB2CF4572000606DF2 /* Project object */ = {
+		A2A5877E2D3120F20000B20D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					A2F669022CF4572000606DF2 = {
-						CreatedOnToolsVersion = 16.0;
+					A2A587852D3120F20000B20D = {
+						CreatedOnToolsVersion = 16.2;
 					};
-					A2F669142CF4572100606DF2 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = A2F669022CF4572000606DF2;
+					A2A587972D3120F30000B20D = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = A2A587852D3120F20000B20D;
 					};
-					A2F6691E2CF4572100606DF2 = {
-						CreatedOnToolsVersion = 16.0;
-						TestTargetID = A2F669022CF4572000606DF2;
+					A2A587A12D3120F30000B20D = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = A2A587852D3120F20000B20D;
+					};
+					A2B9ACF12D5B249C0087911B = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = A2F668FE2CF4572000606DF2 /* Build configuration list for PBXProject "wispr" */;
+			buildConfigurationList = A2A587812D3120F20000B20D /* Build configuration list for PBXProject "wispr" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = A2F668FA2CF4572000606DF2;
+			mainGroup = A2A5877D2D3120F20000B20D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A2FE05AF2D5B96260087AE41 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				A2FE05B22D5B96350087AE41 /* XCRemoteSwiftPackageReference "SwiftWhisper" */,
+				A2FE05B52D5B96400087AE41 /* XCRemoteSwiftPackageReference "SFSymbolsPicker" */,
+				A2FE05BE2D5B968E0087AE41 /* XCLocalSwiftPackageReference "../Formula" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = A2F669042CF4572000606DF2 /* Products */;
+			productRefGroup = A2A587872D3120F20000B20D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A2F669022CF4572000606DF2 /* wispr */,
-				A2F669142CF4572100606DF2 /* wisprTests */,
-				A2F6691E2CF4572100606DF2 /* wisprUITests */,
+				A2A587852D3120F20000B20D /* wispr */,
+				A2A587972D3120F30000B20D /* wisprTests */,
+				A2A587A12D3120F30000B20D /* wisprUITests */,
+				A2B9ACF12D5B249C0087911B /* widgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A2F669012CF4572000606DF2 /* Resources */ = {
+		A2A587842D3120F20000B20D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2F669132CF4572100606DF2 /* Resources */ = {
+		A2A587962D3120F30000B20D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2F6691D2CF4572100606DF2 /* Resources */ = {
+		A2A587A02D3120F30000B20D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2B9ACF02D5B249C0087911B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,21 +480,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A2F668FF2CF4572000606DF2 /* Sources */ = {
+		A2A587822D3120F20000B20D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				361823B322067C06D146BFB6 /* Util.swift in Sources */,
+				6CFADDFD14F573DCEA93E0B1 /* TimeLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2F669112CF4572100606DF2 /* Sources */ = {
+		A2A587942D3120F30000B20D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E4F0EB0CD89A0B2EE014BA8 /* Day.swift in Sources */,
+				08E45829FB8748825105CC2B /* Util.swift in Sources */,
+				D9A552DB3B3541D1AC321A3D /* TimeLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2F6691B2CF4572100606DF2 /* Sources */ = {
+		A2A5879E2D3120F30000B20D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DB8800CCAC7514D54CDDF8C /* Day.swift in Sources */,
+				8E912B88272EA0CCBD688CC2 /* Util.swift in Sources */,
+				8B4854B57B7C4C50552CAFE4 /* TimeLine.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2B9ACEE2D5B249C0087911B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,20 +519,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A2F669172CF4572100606DF2 /* PBXTargetDependency */ = {
+		A2A5879A2D3120F30000B20D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A2F669022CF4572000606DF2 /* wispr */;
-			targetProxy = A2F669162CF4572100606DF2 /* PBXContainerItemProxy */;
+			target = A2A587852D3120F20000B20D /* wispr */;
+			targetProxy = A2A587992D3120F30000B20D /* PBXContainerItemProxy */;
 		};
-		A2F669212CF4572100606DF2 /* PBXTargetDependency */ = {
+		A2A587A42D3120F30000B20D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A2F669022CF4572000606DF2 /* wispr */;
-			targetProxy = A2F669202CF4572100606DF2 /* PBXContainerItemProxy */;
+			target = A2A587852D3120F20000B20D /* wispr */;
+			targetProxy = A2A587A32D3120F30000B20D /* PBXContainerItemProxy */;
+		};
+		A2B9AD042D5B249E0087911B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2B9ACF12D5B249C0087911B /* widgetExtension */;
+			targetProxy = A2B9AD032D5B249E0087911B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		A2F669272CF4572100606DF2 /* Debug */ = {
+		A2A587AA2D3120F30000B20D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -321,7 +589,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -332,7 +600,7 @@
 			};
 			name = Debug;
 		};
-		A2F669282CF4572100606DF2 /* Release */ = {
+		A2A587AB2D3120F30000B20D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -378,7 +646,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -388,17 +656,20 @@
 			};
 			name = Release;
 		};
-		A2F6692A2CF4572100606DF2 /* Debug */ = {
+		A2A587AD2D3120F30000B20D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = wispr/wispr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"wispr/Preview Content\"";
 				DEVELOPMENT_TEAM = 28PK8QN487;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wispr/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Request microphone access to create audio recordings.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -417,17 +688,20 @@
 			};
 			name = Debug;
 		};
-		A2F6692B2CF4572100606DF2 /* Release */ = {
+		A2A587AE2D3120F30000B20D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = wispr/wispr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"wispr/Preview Content\"";
 				DEVELOPMENT_TEAM = 28PK8QN487;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = wispr/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Request microphone access to create audio recordings.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -446,7 +720,7 @@
 			};
 			name = Release;
 		};
-		A2F6692D2CF4572100606DF2 /* Debug */ = {
+		A2A587B02D3120F30000B20D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,7 +728,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 28PK8QN487;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = punk.systems.wisprTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -465,7 +739,7 @@
 			};
 			name = Debug;
 		};
-		A2F6692E2CF4572100606DF2 /* Release */ = {
+		A2A587B12D3120F30000B20D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -473,7 +747,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 28PK8QN487;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = punk.systems.wisprTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,7 +758,7 @@
 			};
 			name = Release;
 		};
-		A2F669302CF4572100606DF2 /* Debug */ = {
+		A2A587B32D3120F30000B20D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -501,7 +775,7 @@
 			};
 			name = Debug;
 		};
-		A2F669312CF4572100606DF2 /* Release */ = {
+		A2A587B42D3120F30000B20D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -515,49 +789,181 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = wispr;
+			};
+			name = Release;
+		};
+		A2B9AD072D5B249E0087911B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 28PK8QN487;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = punk.systems.wispr.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A2B9AD082D5B249E0087911B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 28PK8QN487;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = punk.systems.wispr.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A2F668FE2CF4572000606DF2 /* Build configuration list for PBXProject "wispr" */ = {
+		A2A587812D3120F20000B20D /* Build configuration list for PBXProject "wispr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2F669272CF4572100606DF2 /* Debug */,
-				A2F669282CF4572100606DF2 /* Release */,
+				A2A587AA2D3120F30000B20D /* Debug */,
+				A2A587AB2D3120F30000B20D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2F669292CF4572100606DF2 /* Build configuration list for PBXNativeTarget "wispr" */ = {
+		A2A587AC2D3120F30000B20D /* Build configuration list for PBXNativeTarget "wispr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2F6692A2CF4572100606DF2 /* Debug */,
-				A2F6692B2CF4572100606DF2 /* Release */,
+				A2A587AD2D3120F30000B20D /* Debug */,
+				A2A587AE2D3120F30000B20D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2F6692C2CF4572100606DF2 /* Build configuration list for PBXNativeTarget "wisprTests" */ = {
+		A2A587AF2D3120F30000B20D /* Build configuration list for PBXNativeTarget "wisprTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2F6692D2CF4572100606DF2 /* Debug */,
-				A2F6692E2CF4572100606DF2 /* Release */,
+				A2A587B02D3120F30000B20D /* Debug */,
+				A2A587B12D3120F30000B20D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2F6692F2CF4572100606DF2 /* Build configuration list for PBXNativeTarget "wisprUITests" */ = {
+		A2A587B22D3120F30000B20D /* Build configuration list for PBXNativeTarget "wisprUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2F669302CF4572100606DF2 /* Debug */,
-				A2F669312CF4572100606DF2 /* Release */,
+				A2A587B32D3120F30000B20D /* Debug */,
+				A2A587B42D3120F30000B20D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2B9AD062D5B249E0087911B /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2B9AD072D5B249E0087911B /* Debug */,
+				A2B9AD082D5B249E0087911B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A2FE05BE2D5B968E0087AE41 /* XCLocalSwiftPackageReference "../Formula" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Formula;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2FE05AF2D5B96260087AE41 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.4;
+			};
+		};
+		A2FE05B22D5B96350087AE41 /* XCRemoteSwiftPackageReference "SwiftWhisper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exPHAT/SwiftWhisper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		A2FE05B52D5B96400087AE41 /* XCRemoteSwiftPackageReference "SFSymbolsPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alessiorubicini/SFSymbolsPicker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2FE05B02D5B96260087AE41 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2FE05AF2D5B96260087AE41 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		A2FE05B32D5B96350087AE41 /* SwiftWhisper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2FE05B22D5B96350087AE41 /* XCRemoteSwiftPackageReference "SwiftWhisper" */;
+			productName = SwiftWhisper;
+		};
+		A2FE05B62D5B96400087AE41 /* SFSymbolsPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2FE05B52D5B96400087AE41 /* XCRemoteSwiftPackageReference "SFSymbolsPicker" */;
+			productName = SFSymbolsPicker;
+		};
+		A2FE05B82D5B96480087AE41 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2FE05AF2D5B96260087AE41 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		A2FE05BA2D5B96480087AE41 /* SwiftWhisper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2FE05B22D5B96350087AE41 /* XCRemoteSwiftPackageReference "SwiftWhisper" */;
+			productName = SwiftWhisper;
+		};
+		A2FE05BC2D5B96480087AE41 /* SFSymbolsPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2FE05B52D5B96400087AE41 /* XCRemoteSwiftPackageReference "SFSymbolsPicker" */;
+			productName = SFSymbolsPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = A2F668FB2CF4572000606DF2 /* Project object */;
+	rootObject = A2A5877E2D3120F20000B20D /* Project object */;
 }

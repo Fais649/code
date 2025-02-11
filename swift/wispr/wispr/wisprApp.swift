@@ -2,7 +2,7 @@
 //  wisprApp.swift
 //  wispr
 //
-//  Created by Faisal Alalaiwat on 25.11.24.
+//  Created by Faisal Alalaiwat on 10.01.25.
 //
 
 import SwiftData
@@ -10,34 +10,17 @@ import SwiftUI
 
 @main
 struct wisprApp: App {
-    let container: ModelContainer
+    @State var calendarService: CalendarService = .init()
+    @State var audioService: AudioService = .init()
+
     var body: some Scene {
         WindowGroup {
-            DayView(modelContext: container.mainContext)
+            ContentView()
+                .environment(calendarService)
+                .environment(audioService)
+                .preferredColorScheme(.dark)
         }
-        .modelContainer(container)
-    }
-
-    init() {
-        do {
-            container = try ModelContainer(for: Item.self)
-        } catch {
-            fatalError("Failed to create ModelContainer for Movie.")
-        }
-    }
-}
-
-@Observable
-@MainActor
-class Conductor {
-    var modelContext: ModelContext
-    var activeDay: Day
-    var activeWeek: Week
-
-    init(modelContext: ModelContext) {
-        self.modelContext = modelContext
-        let day = Day(modelContext: modelContext, date: Date())
-        activeDay = day
-        activeWeek = Week(modelContext: modelContext, day: day)
+        
+        .modelContainer(SharedState.sharedModelContainer)
     }
 }

@@ -1,26 +1,6 @@
-[!]  --- xcodebuild: Using the first of multiple matching destinations:
-{ platform:iOS Simulator, id:187AF873-4B51-49CE-BA6C-9D4ABE9EDABB, OS:18.0, name:iPhone 16 Pro }
-{ platform:iOS Simulator, id:187AF873-4B51-49CE-BA6C-9D4ABE9EDABB, OS:18.0, name:iPhone 16 Pro }
-[clap] Compiling ContentView.swift
-[!]  /Users/faisalalalaiwat/punk.systems/code/swift/clap/clap/ContentView.swift:111:39: non-constant range: argument must be an integer literal
-                        ForEach(1 ..< maxCountdown) { i in
-                                      ^
-[clap] Copy arm64-apple-ios-simulator.abi.json -> clap.abi.json
-[clap] Copy arm64-apple-ios-simulator.swiftsourceinfo -> clap.swiftsourceinfo
-Signing clap.debug.dylib (in target 'clap' from project 'clap')
-Signing __preview.dylib (in target 'clap' from project 'clap')
-Signing clap.app (in target 'clap' from project 'clap')
-Build Succeeded
-
 -----------------------------
 -- xcodebuild.nvim summary --
 -----------------------------
-
-Warnings:
-   /Users/faisalalalaiwat/punk.systems/code/swift/clap/clap/ContentView.swift:111:39
-    non-constant range: argument must be an integer literal
-                            ForEach(1 ..< maxCountdown) { i in
-                                          ^
 
   ✔ Build Succeeded
 
