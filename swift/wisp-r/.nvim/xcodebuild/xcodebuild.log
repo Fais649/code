@@ -1,0 +1,490 @@
+Resolving Package Graph
+Resolved source packages
+AudioKit - https://github.com/AudioKit/AudioKit.git @ 5.6.5
+AudioKitEX - https://github.com/AudioKit/AudioKitEX.git @ 5.6.2
+Controls - https://github.com/AudioKit/Controls.git @ 1.1.4
+SwiftWhisper - https://github.com/exPHAT/SwiftWhisper.git @ 1.2.0
+AudioKitUI - https://github.com/AudioKit/AudioKitUI.git @ 0.3.7
+note: Building targets in dependency order
+note: Target dependency graph (15 targets)
+[whisper_cpp] Write Auxiliary File whisper_cpp.DependencyStaticMetadataFileList
+[whisper_cpp] Write Auxiliary File whisper_cpp.DependencyMetadataFileList
+[whisper_cpp] Write Auxiliary File whisper_cpp.modulemap
+[wisp-r] Write Auxiliary File wisp-r.DependencyStaticMetadataFileList
+[wisp-r] Write Auxiliary File wisp-r.hmap
+[whisper_cpp] Write Auxiliary File 82b82416624d2658e5098eb0a28c15c5-common-args.resp
+[whisper_cpp] Write Auxiliary File whisper_cpp.LinkFileList
+[whisper_cpp] Write Auxiliary File 7187679823f38a2a940e0043cdf9d637-common-args.resp
+[whisper_cpp] Write Auxiliary File e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+[wisp-r] Write Auxiliary File wisp-r.DependencyMetadataFileList
+[wisp-r] Write Auxiliary File wisp-r-project-headers.hmap
+[wisp-r] Write Auxiliary File wisp-r-own-target-headers.hmap
+[wisp-r] Write Auxiliary File wisp-r-generated-files.hmap
+[wisp-r] Write Auxiliary File wisp-r-all-target-headers.hmap
+[wisp-r] Write Auxiliary File wisp-r-all-non-framework-target-headers.hmap
+[wisp-r] Write Auxiliary File wisp-r-DebugDylibPath-normal-arm64.txt
+[wisp-r] Write Auxiliary File wisp-r-DebugDylibInstallName-normal-arm64.txt
+[wisp-r] Write Auxiliary File wisp-r.SwiftConstValuesFileList
+[wisp-r] Write Auxiliary File wisp-r_const_extract_protocols.json
+[wisp-r] Write Auxiliary File wisp-r.SwiftFileList
+[wisp-r] Write Auxiliary File wisp-r.LinkFileList
+[wisp-r] Write Auxiliary File wisp-r-OutputFileMap.json
+[wisp-r] Write Auxiliary File Entitlements-Simulated.plist
+[whisper_cpp] Write Auxiliary File af3fcb34312c57c0f52879cdce924b91-common-args.resp
+[whisper_cpp] Copy whisper_cpp.modulemap -> whisper_cpp.modulemap
+[SwiftWhisper] Write Auxiliary File SwiftWhisper.modulemap
+[SwiftWhisper] Write Auxiliary File SwiftWhisper.DependencyStaticMetadataFileList
+[SwiftWhisper] Write Auxiliary File SwiftWhisper.DependencyMetadataFileList
+[SwiftWhisper] Write Auxiliary File SwiftWhisper_const_extract_protocols.json
+[SwiftWhisper] Write Auxiliary File SwiftWhisper.SwiftFileList
+[SwiftWhisper] Write Auxiliary File SwiftWhisper.SwiftConstValuesFileList
+[SwiftWhisper] Write Auxiliary File SwiftWhisper.LinkFileList
+[SwiftWhisper] Write Auxiliary File SwiftWhisper-OutputFileMap.json
+[SwiftWhisper] Copy SwiftWhisper.modulemap -> SwiftWhisper.modulemap
+[Controls] Write Auxiliary File Controls_const_extract_protocols.json
+[Controls] Write Auxiliary File Controls.SwiftFileList
+[Controls] Write Auxiliary File Controls.SwiftConstValuesFileList
+[Controls] Write Auxiliary File Controls.LinkFileList
+[Controls] Write Auxiliary File Controls-OutputFileMap.json
+[Controls] Write Auxiliary File Controls.modulemap
+[Controls] Write Auxiliary File Controls.DependencyStaticMetadataFileList
+[Controls] Write Auxiliary File Controls.DependencyMetadataFileList
+[CAudioKitEX] Write Auxiliary File af3fcb34312c57c0f52879cdce924b91-common-args.resp
+[CAudioKitEX] Write Auxiliary File e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+[CAudioKitEX] Write Auxiliary File CAudioKitEX.LinkFileList
+[CAudioKitEX] Write Auxiliary File 82b82416624d2658e5098eb0a28c15c5-common-args.resp
+[CAudioKitEX] Write Auxiliary File 7187679823f38a2a940e0043cdf9d637-common-args.resp
+[CAudioKitEX] Write Auxiliary File CAudioKitEX.modulemap
+[CAudioKitEX] Write Auxiliary File CAudioKitEX.DependencyStaticMetadataFileList
+[Controls] Copy Controls.modulemap -> Controls.modulemap
+[CAudioKitEX] Write Auxiliary File CAudioKitEX.DependencyMetadataFileList
+[AudioKit_AudioKit] Write Auxiliary File AudioKit_AudioKit.DependencyMetadataFileList
+[AudioKit_AudioKit] Write Auxiliary File empty-AudioKit_AudioKit.plist
+[AudioKit_AudioKit] Write Auxiliary File AudioKit_AudioKit.DependencyStaticMetadataFileList
+[AudioKitUI_AudioKitUI] Write Auxiliary File empty-AudioKitUI_AudioKitUI.plist
+[AudioKitUI_AudioKitUI] Write Auxiliary File AudioKitUI_AudioKitUI.DependencyStaticMetadataFileList
+[AudioKitUI_AudioKitUI] Write Auxiliary File AudioKitUI_AudioKitUI.DependencyMetadataFileList
+[CAudioKitEX] Copy CAudioKitEX.modulemap -> CAudioKitEX.modulemap
+[AudioKitUI] Write Auxiliary File AudioKitUI_const_extract_protocols.json
+[AudioKitUI] Write Auxiliary File AudioKitUI.SwiftFileList
+[AudioKitUI] Write Auxiliary File AudioKitUI.SwiftConstValuesFileList
+[AudioKitUI] Write Auxiliary File AudioKitUI.LinkFileList
+[AudioKitUI] Write Auxiliary File AudioKitUI-OutputFileMap.json
+[AudioKitUI] Write Auxiliary File resource_bundle_accessor.swift
+[AudioKitUI] Write Auxiliary File AudioKitUI.modulemap
+[AudioKitUI] Write Auxiliary File AudioKitUI.DependencyStaticMetadataFileList
+[AudioKitUI] Write Auxiliary File AudioKitUI.DependencyMetadataFileList
+[AudioKitEX] Write Auxiliary File AudioKitEX_const_extract_protocols.json
+[AudioKitEX] Write Auxiliary File AudioKitEX.SwiftFileList
+[AudioKitEX] Write Auxiliary File AudioKitEX.SwiftConstValuesFileList
+[AudioKitEX] Write Auxiliary File AudioKitEX.LinkFileList
+[AudioKitEX] Write Auxiliary File AudioKitEX-OutputFileMap.json
+[AudioKitEX] Write Auxiliary File AudioKitEX.modulemap
+[AudioKitEX] Write Auxiliary File AudioKitEX.DependencyStaticMetadataFileList
+[AudioKitUI] Copy AudioKitUI.modulemap -> AudioKitUI.modulemap
+[AudioKitEX] Write Auxiliary File AudioKitEX.DependencyMetadataFileList
+[AudioKit] Write Auxiliary File AudioKit.SwiftFileList
+[AudioKit] Write Auxiliary File AudioKit_const_extract_protocols.json
+[AudioKit] Write Auxiliary File AudioKit.SwiftConstValuesFileList
+[AudioKit] Write Auxiliary File AudioKit.LinkFileList
+[AudioKit] Write Auxiliary File AudioKit-OutputFileMap.json
+[AudioKit] Write Auxiliary File resource_bundle_accessor.swift
+[AudioKitEX] Copy AudioKitEX.modulemap -> AudioKitEX.modulemap
+[AudioKit] Write Auxiliary File AudioKit.modulemap
+[AudioKit] Write Auxiliary File AudioKit.DependencyStaticMetadataFileList
+[AudioKit] Write Auxiliary File AudioKit.DependencyMetadataFileList
+[AudioKit_AudioKit] Processing empty-AudioKit_AudioKit.plist
+[AudioKit_AudioKit] Copying PrivacyInfo.xcprivacy
+[AudioKit] Copy AudioKit.modulemap -> AudioKit.modulemap
+[AudioKitUI_AudioKitUI] Processing empty-AudioKitUI_AudioKitUI.plist
+[AudioKitUI_AudioKitUI] Copying short.aif
+[AudioKitUI_AudioKitUI] Copying drumloop.wav
+Signing AudioKit_AudioKit.bundle (in target 'AudioKit_AudioKit' from project 'AudioKit')
+[AudioKit_AudioKit] RegisterExecutionPolicyException AudioKit_AudioKit.bundle
+[AudioKit_AudioKit] Touching AudioKit_AudioKit.bundle
+[whisper_cpp] Compiling whisper-encoder.mm
+[whisper_cpp] Compiling whisper.cpp
+[CAudioKitEX] Compiling ParameterAutomation.mm
+[CAudioKitEX] Compiling SequencerEngine.mm
+[CAudioKitEX] Compiling StereoFieldLimiterDSP.mm
+[CAudioKitEX] Compiling RenderMeasurerDSP.mm
+[CAudioKitEX] Compiling FaderDSP.mm
+[CAudioKitEX] Compiling DryWetMixerDSP.mm
+[CAudioKitEX] Compiling DryWetDualMixerDSP.mm
+[CAudioKitEX] Compiling DSPBase.mm
+[CAudioKitEX] Compiling CallbackInstrumentDSP.mm
+[CAudioKitEX] Compiling AtomicDataPtr.cpp
+[SwiftWhisper] Compiling WhisperError.swift
+[SwiftWhisper] Compiling WhisperSamplingStrategy.swift
+[SwiftWhisper] Copy arm64-apple-ios-simulator.swiftmodule -> SwiftWhisper.swiftmodule
+[SwiftWhisper] Copy arm64-apple-ios-simulator.swiftdoc -> SwiftWhisper.swiftdoc
+[SwiftWhisper] Copy arm64-apple-ios-simulator.abi.json -> SwiftWhisper.abi.json
+[SwiftWhisper] Copy arm64-apple-ios-simulator.swiftsourceinfo -> SwiftWhisper.swiftsourceinfo
+[SwiftWhisper] Compiling WhisperLanguage.swift
+[SwiftWhisper] Compiling Whisper.swift
+[SwiftWhisper] Compiling WhisperParams.swift
+[SwiftWhisper] Compiling WhisperDelegate.swift
+[SwiftWhisper] Compiling Segment.swift
+[Controls] Compiling ModWheel.swift
+[Controls] Compiling PitchWheel.swift
+[Controls] Compiling Helpers.swift
+[Controls] Compiling ArcKnob.swift
+[Controls] Compiling TwoParameterControl.swift
+[Controls] Compiling XYPad.swift
+[Controls] Compiling Ribbon.swift
+[Controls] Compiling IndexedSlider.swift
+[Controls] Compiling Joystick.swift
+[CAudioKitEX] Compiling ExceptionCatcher.m
+[whisper_cpp] Compiling ggml.c
+[Controls] Compiling SingleTouchView.swift
+[Controls] Compiling PlanarGeometry.swift
+[whisper_cpp] Compiling whisper-encoder-impl.m
+[whisper_cpp] Linking whisper_cpp.o
+[Controls] Copy arm64-apple-ios-simulator.swiftmodule -> Controls.swiftmodule
+[Controls] Copy arm64-apple-ios-simulator.swiftdoc -> Controls.swiftdoc
+[Controls] Copy arm64-apple-ios-simulator.abi.json -> Controls.abi.json
+[Controls] Copy arm64-apple-ios-simulator.swiftsourceinfo -> Controls.swiftsourceinfo
+[Controls] Compiling Control.swift
+[Controls] Compiling ControlGeometry.swift
+[Controls] Compiling SmallKnob.swift
+[AudioKit] Compiling AudioEngine.swift
+[AudioKit] Compiling CheckError.swift
+[AudioKit] Compiling CommonError.swift
+[AudioKit] Compiling AVAudioEngine+Devices.swift
+[AudioKit] Compiling Device.swift
+[AudioKit] Compiling DeviceUtils.swift
+[AudioKit] Compiling Settings+iOSVariants.swift
+[AudioKit] Compiling Settings+macOS.swift
+[AudioKit] Compiling Settings.swift
+[AudioKit] Compiling Table+AdditiveSynthesis.swift
+[AudioKit] Compiling Table.swift
+[AudioKit] Compiling AVAudioPCMBuffer+audition.swift
+[AudioKit] Compiling AVAudioTimeShim.swift
+[AudioKit] Compiling AudioKitHelpers.swift
+[AudioKit] Compiling MIDIPacket+SequenceType.swift
+[AudioKit] Compiling MIDIPacketList+SequenceType.swift
+[AudioKit] Compiling BPM+StatisticalTools.swift
+[AudioKit] Compiling MIDIHelper.swift
+[AudioKit] Compiling MIDISysexMessage.swift
+[AudioKit] Compiling MIDITimeout.swift
+[AudioKit] Compiling MIDIVariableLengthQuantity.swift
+[AudioKit] Compiling AVAudioUnitEffect+Apple.swift
+[AudioKit] Compiling Delay.swift
+[AudioKit] Compiling AppleDistortion.swift
+[AudioKit] Compiling Decimator.swift
+[AudioKit] Compiling Distortion.swift
+[AudioKit] Compiling RingModulator.swift
+[AudioKit] Compiling Compressor.swift
+[AudioKit] Compiling Log.swift
+[AudioKit] Compiling MemoryAddress.swift
+[AudioKit] Compiling MusicalDuration.swift
+[AudioKit] Compiling ThreadLockedAccessor.swift
+[AudioKit] Compiling BluetoothMIDIButton.swift
+[AudioKit] Compiling MIDIControl.swift
+[AudioKit] Compiling MIDICustomMetaEvent.swift
+[AudioKit] Compiling MIDIMessage.swift
+[AudioKit] Compiling MIDIStatus.swift
+[AudioKit] Compiling MIDISystemCommand.swift
+[AudioKit] Compiling MIDIBeatObserver.swift
+[AudioKit] Compiling MIDIClockListener.swift
+[AudioKit] Compiling MIDIMonoPolyListener.swift
+[AudioKit] Compiling MIDIObserverMaster.swift
+[AudioKit] Compiling MusicTrack.swift
+[AudioKit] Compiling TimeSignature.swift
+[AudioKit] Compiling UnsafeMIDIMetaEventPointer.swift
+[AudioKit] Compiling Duration.swift
+[AudioKit] Compiling AmplitudeTap.swift
+[AudioKit] Compiling BaseTap.swift
+[AudioKit] Compiling FFTTap.swift
+[AudioKit] Compiling MultiChannelInputNodeTap+WriteableFile.swift
+[AudioKit] Compiling MultiChannelInputNodeTap.swift
+[AudioKit] Compiling NodeRecorder.swift
+[AudioKit] Compiling RawBufferTap.swift
+[AudioKit] Compiling RawDataTap.swift
+[AudioKit] Compiling Tap.swift
+[CAudioKitEX] Compiling DebugDSP.c
+[AudioKit] Compiling resource_bundle_accessor.swift
+[AudioKit] Compiling AVAudioFile+Utilities.swift
+[AudioKit] Compiling AVAudioPCMBuffer+Processing.swift
+[AudioKit] Compiling AVAudioPCMBuffer+Utilities.swift
+[AudioKit] Compiling FormatConverter+Compressed.swift
+[AudioKit] Compiling FormatConverter+PCM.swift
+[AudioKit] Compiling FormatConverter+Utilities.swift
+[AudioKit] Compiling FormatConverter.swift
+[AudioKit] Compiling WaveformDataRequest.swift
+[AudioKit] Compiling AVAudioUnit+Helpers.swift
+[AudioKit] Compiling AudioComponentDescription+Helpers.swift
+[AudioKit] Compiling AudioUnit+Helpers.swift
+[AudioKit] Compiling AVAudioEngine+Extensions.swift
+[AudioKit] Compiling AudioEngine+connectionTreeDescription.swift
+[AudioKit] Compiling PresetBuilder.swift
+[AudioKit] Compiling AudioPlayer+Buffering.swift
+[AudioKit] Compiling AudioPlayer+Legacy.swift
+[AudioKit] Compiling AudioPlayer+Playback.swift
+[AudioKit] Compiling AudioPlayer+Scheduling.swift
+[AudioKit] Compiling AudioPlayer.swift
+[AudioKit] Compiling MultiSegmentAudioPlayer.swift
+[AudioKit] Compiling TimePitch.swift
+[AudioKit] Compiling VariSpeed.swift
+[AudioKit] Compiling AppleSequencer.swift
+[AudioKit] Compiling MIDIMetaEvent+allocate.swift
+[AudioKit] Compiling MusicTrack+Events.swift
+[AudioKit] Compiling MusicTrack+Load.swift
+[AudioKit] Compiling MatrixMixer.swift
+[AudioKit] Compiling Mixer.swift
+[AudioKit] Compiling Mixer3D.swift
+[AudioKit] Compiling NamedNode.swift
+[AudioKit] Compiling Node+ConnectStrategy.swift
+[AudioKit] Compiling Node+Graphviz.swift
+[AudioKit] Compiling Node+connectionTreeDescription.swift
+[AudioKit] Compiling Node+disconnectStrategy.swift
+[AudioKit] Compiling Node.swift
+[AudioKit] Compiling NodeParameter.swift
+[AudioKit] Compiling NodeStatus.swift
+[AudioKit] Compiling AppleSampler+SoundFonts.swift
+[AudioKit] Compiling AppleSampler+getAUPresetXML.swift
+[AudioKit] Compiling AppleSampler.swift
+[AudioKit] Compiling MIDIFileChunk.swift
+[AudioKit] Compiling MIDIFileChunkEvent.swift
+[AudioKit] Compiling MIDIFileHeaderChunk.swift
+[AudioKit] Compiling MIDIFileTempoTrack.swift
+[AudioKit] Compiling MIDIFileTrack.swift
+[AudioKit] Compiling MIDIFileTrackChunk.swift
+[AudioKit] Compiling MIDIFileTrackMap.swift
+[AudioKit] Compiling MIDIInstrument.swift
+[AudioKit] Compiling MIDIListener.swift
+[AudioKit] Compiling MIDINoteData.swift
+[AudioKit] Compiling MIDIPlayer.swift
+[AudioKit] Compiling MIDISampler.swift
+[AudioKit] Compiling MIDITransformer.swift
+[AudioKit] Compiling MIDIPacket+Extensions.swift
+[AudioKit] Compiling DynamicsProcessor.swift
+[AudioKit] Compiling Expander.swift
+[AudioKit] Compiling PeakLimiter.swift
+[AudioKit] Compiling BandPassFilter.swift
+[AudioKit] Compiling HighPassFilter.swift
+[AudioKit] Compiling HighShelfFilter.swift
+[AudioKit] Compiling LowPassFilter.swift
+[AudioKit] Compiling LowShelfFilter.swift
+[AudioKit] Compiling ParametricEQ.swift
+[AudioKit] Compiling NewPitch.swift
+[AudioKit] Compiling Reverb.swift
+[AudioKit] Compiling PlaygroundNoiseGenerator.swift
+[AudioKit] Compiling PlaygroundOscillator.swift
+[AudioKit] Compiling EnvironmentalNode.swift
+[CAudioKitEX] Compiling AudioToolboxLinker.m
+[CAudioKitEX] Linking CAudioKitEX.o
+[AudioKit] Copy arm64-apple-ios-simulator.swiftmodule -> AudioKit.swiftmodule
+[AudioKit] Copy arm64-apple-ios-simulator.swiftdoc -> AudioKit.swiftdoc
+[AudioKit] Copy arm64-apple-ios-simulator.abi.json -> AudioKit.abi.json
+[AudioKit] Copy arm64-apple-ios-simulator.swiftsourceinfo -> AudioKit.swiftsourceinfo
+[AudioKit] Compiling MIDIOmniListener.swift
+[AudioKit] Compiling MIDISystemRealTimeListener.swift
+[AudioKit] Compiling MIDISystemRealTimeObserver.swift
+[AudioKit] Compiling MIDITempoListener.swift
+[AudioKit] Compiling MIDITempoObserver.swift
+[AudioKit] Compiling MIDI+Extensions.swift
+[AudioKit] Compiling MIDI+Receiving.swift
+[AudioKit] Compiling MIDI+Sending.swift
+[AudioKit] Compiling MIDI+VirtualPorts.swift
+[AudioKit] Compiling MIDI.swift
+[AudioKit] Compiling MIDICallbackInstrument.swift
+[AudioKit] Compiling MIDIEndpointInfo.swift
+[AudioKit] Compiling MIDIEvent.swift
+[AudioKit] Compiling MIDIFile.swift
+[Controls] Linking Controls.o
+Signing AudioKitUI_AudioKitUI.bundle (in target 'AudioKitUI_AudioKitUI' from project 'AudioKitUI')
+[whisper_cpp] RegisterExecutionPolicyException whisper_cpp.o
+[CAudioKitEX] RegisterExecutionPolicyException CAudioKitEX.o
+[Controls] Extract App Intents Metadata
+[SwiftWhisper] Linking SwiftWhisper.o
+[AudioKitUI_AudioKitUI] RegisterExecutionPolicyException AudioKitUI_AudioKitUI.bundle
+[AudioKitUI_AudioKitUI] Touching AudioKitUI_AudioKitUI.bundle
+[SwiftWhisper] Extract App Intents Metadata
+[AudioKitEX] Compiling Sequence.swift
+[AudioKitEX] Compiling NodeParameter+Automation.swift
+[AudioKitEX] Compiling ParameterAutomation.swift
+[AudioKitUI] Compiling ParameterSlider.swift
+[AudioKitUI] Compiling ReverbPresetStepper.swift
+[AudioKitUI] Compiling TapCountingDrumPadGrid.swift
+[AudioKitUI] Compiling TempoDraggableStepper.swift
+[AudioKitUI] Compiling MIDITrackView.swift
+[AudioKitUI] Compiling MusicalDurationStepper.swift
+[AudioKitUI] Compiling ParameterEditor.swift
+[AudioKitUI] Compiling ParameterEditor2.swift
+[AudioKitUI] Compiling NodeRollingView.swift
+[AudioKitUI] Compiling RawOutputView.swift
+[AudioKitUI] Compiling SpectrogramView.swift
+[AudioKitUI] Compiling FFTView.swift
+[AudioKitUI] Compiling FloatPlot.swift
+[AudioKitUI] Compiling NodeFFTView.swift
+[AudioKitUI] Compiling NodeOutputView.swift
+[AudioKitUI] Compiling WaveformLayer.swift
+[AudioKitUI] Compiling WavetableArrayView.swift
+[AudioKitUI] Compiling WavetableView.swift
+[AudioKitUI] Compiling resource_bundle_accessor.swift
+[AudioKitUI] Compiling AudioKitUI.swift
+[AudioKitUI] Compiling ADSRView.swift
+[AudioKitUI] Compiling ADSRWidget.swift
+[AudioKitUI] Compiling CircleCursorView.swift
+[AudioKitUI] Compiling SpectrumPopupView.swift
+[AudioKitUI] Compiling SpectrumView.swift
+[AudioKitEX] Copy arm64-apple-ios-simulator.swiftmodule -> AudioKitEX.swiftmodule
+[AudioKitEX] Copy arm64-apple-ios-simulator.swiftdoc -> AudioKitEX.swiftdoc
+[AudioKitEX] Copy arm64-apple-ios-simulator.abi.json -> AudioKitEX.abi.json
+[AudioKitEX] Copy arm64-apple-ios-simulator.swiftsourceinfo -> AudioKitEX.swiftsourceinfo
+[AudioKitUI] Compiling AudioKitUIHelpers.swift
+[AudioKitUI] Compiling MorphableShape.swift
+[AudioKitUI] Compiling MultitouchOverlayView.swift
+[AudioKitUI] Compiling TestAudioURLs.swift
+[AudioKitUI] Compiling TableView.swift
+[AudioKitUI] Compiling TrackView.swift
+[AudioKitUI] Compiling Waveform.swift
+[AudioKitUI] Compiling AmplitudeView.swift
+[AudioKitUI] Compiling AudioFileWaveform.swift
+[AudioKitUI] Compiling AudioWaveform.swift
+[AudioKitUI] Compiling DryWetMixView.swift
+[AudioKitEX] Compiling DryWetMixer.swift
+[AudioKitEX] Compiling Fader.swift
+[AudioKitEX] Compiling StereoFieldLimiter.swift
+[AudioKitUI] Copy arm64-apple-ios-simulator.swiftmodule -> AudioKitUI.swiftmodule
+[AudioKitUI] Copy arm64-apple-ios-simulator.swiftdoc -> AudioKitUI.swiftdoc
+[AudioKitUI] Copy arm64-apple-ios-simulator.abi.json -> AudioKitUI.abi.json
+[AudioKitUI] Copy arm64-apple-ios-simulator.swiftsourceinfo -> AudioKitUI.swiftsourceinfo
+[AudioKitEX] Compiling Node+AudioKitAU.swift
+[AudioKitEX] Compiling Node+Triggerable.swift
+[AudioKitEX] Compiling AudioKitAU.swift
+[AudioKitEX] Compiling AutomationCurve.swift
+[AudioKitEX] Compiling SequencerTrack.swift
+[AudioKitEX] Compiling RenderMeasurer.swift
+[AudioKitEX] Compiling Sequencer.swift
+[AudioKitEX] Compiling CallbackInstrument.swift
+[AudioKitEX] Compiling DryWetDualMixer.swift
+[AudioKit] Linking AudioKit.o
+[wisp-r] Generate Asset Symbols Assets.xcassets
+[SwiftWhisper] RegisterExecutionPolicyException SwiftWhisper.o
+[Controls] RegisterExecutionPolicyException Controls.o
+[AudioKit] Extract App Intents Metadata
+[wisp-r] Compiling DatePickerSheetButton.swift
+[wisp-r] Compiling UserSetting.swift
+[wisp-r] Compiling SearchScreen.swift
+[!]  /Users/Faisal/punk.systems/code/swift/wisp-r/wisp-r/View/Screen/SearchScreen.swift:67:178: 'defaultDigitsNoAMPM' is deprecated: renamed to 'defaultDigits(amPM:)'
+                            "Created: \(moment.createdAt.formatted(.dateTime.day(.twoDigits).month(.twoDigits).year(.twoDigits))) @ \(moment.createdAt.formatted(.dateTime.hour(.defaultDigitsNoAMPM).minute(.defaultDigits)))"
+                                                                                                                                                                                 ^
+[wisp-r] Compiling LocationSearchField.swift
+[wisp-r] Compiling TimelineSectionHeader.swift
+[wisp-r] Compiling TimelineStore.swift
+[wisp-r] Compiling MomentRow.swift
+[wisp-r] Compiling EventStore.swift
+[wisp-r] Compiling Spacing.swift
+[wisp-r] Compiling wisp_rApp.swift
+[wisp-r] Compiling NavigationListScreen.swift
+[wisp-r] Compiling SheetToolbar.swift
+[wisp-r] Compiling RitualStack.swift
+[wisp-r] Compiling EventCalendarStore.swift
+[wisp-r] Compiling DatePickerSheet.swift
+[wisp-r] Compiling DayStore.swift
+[wisp-r] Compiling BackButton.swift
+[wisp-r] Compiling Icon.swift
+[wisp-r] Compiling EKCalendarService.swift
+[wisp-r] Compiling RitualRecordButton.swift
+[wisp-r] Compiling MomentStore.swift
+[wisp-r] Compiling RitualRecordStack.swift
+[wisp-r] Compiling CalendarEventSheet.swift
+[wisp-r] Compiling MomentSheetImageRow.swift
+[wisp-r] Compiling ImageData.swift
+[wisp-r] Compiling DayVStack.swift
+[wisp-r] Compiling Audio.swift
+[wisp-r] Compiling MomentSheetRow.swift
+[wisp-r] Compiling TimelinesSheetButton.swift
+[wisp-r] Compiling AudioPlayerService.swift
+[wisp-r] Compiling MomentSheetToolbar.swift
+[wisp-r] Compiling Permission.swift
+[wisp-r] Compiling NavigationDetailScreen.swift
+[wisp-r] Compiling SheetMomentService.swift
+[wisp-r] Compiling SheetDismissButton.swift
+[wisp-r] Compiling Ritual.swift
+[wisp-r] Compiling MomentImageRow.swift
+[wisp-r] Compiling EventCalendar.swift
+[wisp-r] Compiling ColorPickerSheet.swift
+[wisp-r] Compiling StartupCron.swift
+[wisp-r] Compiling Screen.swift
+[wisp-r] Compiling SymbolPicker.swift
+[wisp-r] Compiling Timeline.swift
+[wisp-r] Compiling MomentList.swift
+[wisp-r] Compiling EventLocation.swift
+[wisp-r] Compiling GeneratedAssetSymbols.swift
+[wisp-r] Compiling Path.swift
+[wisp-r] Compiling DaysScreen.swift
+[wisp-r] Compiling HapticService.swift
+[wisp-r] Compiling RitualRow.swift
+[wisp-r] Compiling MomentType.swift
+[wisp-r] Compiling LocationPickerSheetButton.swift
+[wisp-r] Compiling Event.swift
+[wisp-r] Compiling CircleButton.swift
+[wisp-r] Compiling DateTitle.swift
+[wisp-r] Compiling SettingsScreen.swift
+[wisp-r] Compiling TimelineSheet.swift
+[wisp-r] Compiling ColorData.swift
+[wisp-r] Compiling MomentSheet.swift
+[wisp-r] Compiling DaySheet.swift
+[wisp-r] Compiling TimelineScreen.swift
+[wisp-r] Compiling TimelinesSheet.swift
+[wisp-r] Compiling Images.swift
+[wisp-r] Compiling DualDatePickerSheetButton.swift
+[wisp-r] Compiling AudioPlayerView.swift
+[wisp-r] Compiling Default.swift
+[wisp-r] Compiling ContentView.swift
+[wisp-r] Compiling ToggleButton.swift
+[wisp-r] Compiling AudioRecorderService.swift
+[wisp-r] Compiling MomentSheetToolbarMenu.swift
+[wisp-r] Compiling DualDateSheet.swift
+[wisp-r] Compiling Day.swift
+[wisp-r] Compiling AudioRecorderView.swift
+[wisp-r] Compiling Extensions.swift
+[wisp-r] Compiling BroadcasterService.swift
+[wisp-r] Compiling MomentStack.swift
+[wisp-r] Compiling Moment.swift
+[wisp-r] Compiling EnterableTextField.swift
+[wisp-r] Copy arm64-apple-ios-simulator.swiftmodule -> wisp_r.swiftmodule
+[wisp-r] Copy arm64-apple-ios-simulator.swiftdoc -> wisp_r.swiftdoc
+[wisp-r] Copy arm64-apple-ios-simulator.abi.json -> wisp_r.abi.json
+[wisp-r] Copy arm64-apple-ios-simulator.swiftsourceinfo -> wisp_r.swiftsourceinfo
+[AudioKit] RegisterExecutionPolicyException AudioKit.o
+[AudioKitUI] Linking AudioKitUI.o
+[AudioKitEX] Linking AudioKitEX.o
+[AudioKitEX] Extract App Intents Metadata
+[AudioKitUI] Extract App Intents Metadata
+[AudioKitEX] RegisterExecutionPolicyException AudioKitEX.o
+[AudioKitUI] RegisterExecutionPolicyException AudioKitUI.o
+[wisp-r] Linking __preview.dylib
+[wisp-r] Copying tiny.bin
+[wisp-r] Copying tiny-encoder.mlmodelc
+[wisp-r] Copy AudioKit_AudioKit.bundle -> AudioKit_AudioKit.bundle
+[wisp-r] Copy AudioKitUI_AudioKitUI.bundle -> AudioKitUI_AudioKitUI.bundle
+[wisp-r] Processing Info.plist
+[wisp-r] Linking wisp-r.debug.dylib
+note: Using stub executor library with Swift entry point. (in target 'wisp-r' from project 'wisp-r')
+[wisp-r] Linking wisp-r
+[wisp-r] Extract App Intents Metadata
+Signing wisp-r.debug.dylib (in target 'wisp-r' from project 'wisp-r')
+Signing __preview.dylib (in target 'wisp-r' from project 'wisp-r')
+Signing wisp-r.app (in target 'wisp-r' from project 'wisp-r')
+[wisp-r] RegisterExecutionPolicyException wisp-r.app
+[wisp-r] Validate wisp-r.app
+[wisp-r] Touching wisp-r.app
+note: Disabling hardened runtime with ad-hoc codesigning. (in target 'wisp-r' from project 'wisp-r')
+Build Succeeded
+
+-----------------------------
+-- xcodebuild.nvim summary --
+-----------------------------
+
+Warnings:
+   /Users/Faisal/punk.systems/code/swift/wisp-r/wisp-r/View/Screen/SearchScreen.swift:67:178
+    'defaultDigitsNoAMPM' is deprecated: renamed to 'defaultDigits(amPM:)'
+                                "Created: \(moment.createdAt.formatted(.dateTime.day(.twoDigits).month(.twoDigits).year(.twoDigits))) @ \(moment.createdAt.formatted(.dateTime.hour(.defaultDigitsNoAMPM).minute(.defaultDigits)))"
+                                                                                                                                                                                     ^
+
+  ✔ Build Succeeded
+
